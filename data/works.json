@@ -1,0 +1,122 @@
+{
+  "_note": "Claude が用意した作品リスト。文言は一字も変えずに使う。並び順はこの配列の順。作品を足すときはここに1件足すだけで、build で一覧と詳細ページができる",
+  "categories": [
+    { "name": "すべて", "slug": "all" },
+    { "name": "Web・LP", "slug": "web" },
+    { "name": "AI音声・自作ツール", "slug": "tool" },
+    { "name": "LINEスタンプ", "slug": "stamp" },
+    { "name": "発信・note", "slug": "note" }
+  ],
+  "works": [
+    {
+      "id": "school-lp",
+      "title": "スクールの申込LP",
+      "category": "Web・LP",
+      "card": "assets/works/school-lp/card.jpg",
+      "cardAlt": "スクールの申込LPの紹介画像。パソコンとスマホで表示した画面",
+      "description": [
+        "「絵が描けないけれどAI画像で副業を始めたい」人に、無料の30日ロードマップを受け取ってもらうためのLPです。",
+        "PASONAの型で原稿を書き、画像の生成からスマホ・パソコン両方の見た目、動き、公開まで一人で仕上げました。",
+        "改行はスマホ2種類とパソコンの幅でチェックして直し、卒業課題として提出・公開しました。"
+      ],
+      "role": ["構成・コピー", "画像", "コーディング", "公開"],
+      "tools": ["ChatGPT（原稿）", "Claude Code（HTML/CSS）", "Cloudflare（画像生成・公開）"],
+      "period": "2026年10月",
+      "note": "架空のオンラインAI画像スクールを想定した、AIコピー部の卒業課題です。",
+      "links": [
+        { "label": "実際のページを見る", "url": "https://ai-gazo-school-lp.pages.dev/" }
+      ],
+      "gallery": [
+        { "src": "assets/works/school-lp/lp_pc.jpg", "alt": "パソコンで表示した最初の画面", "kind": "pc" },
+        { "src": "assets/works/school-lp/lp_sp1.jpg", "alt": "スマホで表示した最初の画面", "kind": "sp" },
+        { "src": "assets/works/school-lp/lp_sp2.jpg", "alt": "スマホで表示した「こんな悩みはありませんか？」の部分", "kind": "sp" },
+        { "src": "assets/works/school-lp/lp_sp3.jpg", "alt": "スマホで表示した「流れを知っておく」の部分", "kind": "sp" }
+      ]
+    },
+    {
+      "id": "voice-kit",
+      "title": "音声づくりツール Voice Kit",
+      "category": "AI音声・自作ツール",
+      "card": "assets/works/voice-kit/card.jpg",
+      "cardAlt": "音声づくりツール Voice Kit の紹介画像。パソコンとスマホで表示した画面",
+      "description": [
+        "「AIの声を使ってみたい。でも設定やプログラムは難しい」という人のために作ったツールです。",
+        "声・雰囲気・文章を選んで押すだけで読み上げる画面を設計し、コードを1行も書かずにAIで開発しました。",
+        "2026年10月のオンライン説明会（約35名）で紹介し、Windows アプリ版と Mac でも使える Web 版も作りました。"
+      ],
+      "role": ["企画", "設計", "AIで開発", "公開"],
+      "tools": ["Fish Audio（音声）", "Claude（設計と指示書）", "Antigravity（開発）", "Vercel（公開）"],
+      "period": "2026年10月〜",
+      "note": "公開デモ版は、1日20回まで試せます。",
+      "links": [
+        { "label": "公開デモを試す", "url": "https://voice-kit-web.vercel.app" }
+      ],
+      "gallery": [
+        { "src": "assets/works/voice-kit/vk_pc.jpg", "alt": "パソコンで表示した画面（簡単モード）", "kind": "pc" },
+        { "src": "assets/works/voice-kit/vk_sp1.jpg", "alt": "スマホで表示した使い方の4ステップ", "kind": "sp" },
+        { "src": "assets/works/voice-kit/vk_sp2.jpg", "alt": "スマホで表示した声のキャラクターと雰囲気の選択", "kind": "sp" }
+      ]
+    },
+    {
+      "id": "line-stamp-chako",
+      "title": "LINEスタンプ「三毛猫女子・西宮ちゃこ」",
+      "category": "LINEスタンプ",
+      "card": "assets/works/line-stamp-chako/card.jpg",
+      "cardAlt": "LINEスタンプ「三毛猫女子・西宮ちゃこ」の紹介画像。スタンプ12点",
+      "description": [
+        "実在の三毛猫「ちゃこ」をもとに、猫耳の女の子「西宮ちゃこ」のキャラクターを作りました。",
+        "毎日使えるあいさつや返事を中心にセリフを考え、AIで同じキャラのまま描き分けて、LINEの規格に整えました。",
+        "第1弾は初めての申請で承認され、第2弾とあわせて2セット・56点を販売しています。"
+      ],
+      "role": ["キャラ設定", "セリフ", "AI画像", "申請"],
+      "tools": ["画像生成AI", "Python（背景を抜いて規格のサイズに整える）"],
+      "period": "2026年8月〜9月",
+      "note": "",
+      "links": [
+        { "label": "第1弾（16点）を LINE STORE で見る", "url": "https://store.line.me/stickershop/product/36010166/ja" },
+        { "label": "第2弾（40点）を LINE STORE で見る", "url": "https://store.line.me/stickershop/product/36620665/ja" }
+      ],
+      "gallery": [
+        { "src": "assets/works/line-stamp-chako/a01.png", "alt": "スタンプ「ありがとう」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/a02.png", "alt": "スタンプ「おはよう」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/b02.png", "alt": "スタンプ「やっほー！」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/a05.png", "alt": "スタンプ「了解です」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/b10.png", "alt": "スタンプ「仕事中です」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/b18.png", "alt": "スタンプ「猫パンチ！」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/a12.png", "alt": "スタンプ「ファイト！」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/b24.png", "alt": "スタンプ「それな！」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/b28.png", "alt": "スタンプ「待ってるね」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/b08.png", "alt": "スタンプ「お昼寝します…」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/a08.png", "alt": "スタンプ「おやすみ」", "kind": "sticker" },
+        { "src": "assets/works/line-stamp-chako/b40.png", "alt": "スタンプ「また遊ぼうね！」", "kind": "sticker" }
+      ]
+    },
+    {
+      "id": "note-series",
+      "title": "note連載「50代の早期退職とAI」",
+      "category": "発信・note",
+      "card": "assets/works/note-series/card.jpg",
+      "cardAlt": "note連載の紹介画像。記事の見出し画像6枚",
+      "description": [
+        "55歳で会社を辞め、AIで仕事を作っていく途中を、同じ世代の人に向けて書いている連載です。",
+        "毎回、AIに自分の体験を聞き取ってもらう形で素材を集め、本文・見出し画像・挿絵まで自分でそろえています。",
+        "2026年8月から続けており、AIの講座の受講記や、自作ツールの話も届けています。"
+      ],
+      "role": ["取材", "執筆", "見出し画像", "挿絵"],
+      "tools": ["Claude（構成・下書きの手伝い）", "画像生成AI（挿絵）", "HTML（見出し画像）"],
+      "period": "2026年8月〜（連載中）",
+      "note": "",
+      "links": [
+        { "label": "noteで記事を読む", "url": "https://note.com/nrnr_hawaii" }
+      ],
+      "gallery": [
+        { "src": "assets/works/note-series/header1.jpg", "alt": "連載第1号の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/ndebab7d94742" },
+        { "src": "assets/works/note-series/header2.jpg", "alt": "音声アプリの説明会のお知らせ記事の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/n852aae7b4644" },
+        { "src": "assets/works/note-series/header3.jpg", "alt": "AI×SNS部 受講記#5の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/n5ea3703d0528" },
+        { "src": "assets/works/note-series/header4.jpg", "alt": "働き方について書いた短い記事の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/na08fa5ac47a1" },
+        { "src": "assets/works/note-series/header5.jpg", "alt": "夕食の献立をAIに相談した記事の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/n2fb17ff5b717" },
+        { "src": "assets/works/note-series/header6.jpg", "alt": "AIデザイン部に申し込んだ記事の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/n1708b0b18e18" }
+      ]
+    }
+  ]
+}

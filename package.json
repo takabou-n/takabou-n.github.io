@@ -1,0 +1,11 @@
+{
+  "name": "takabou-n-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.js",
+    "check": "node tools/check.js",
+    "serve": "node tools/serve.js"
+  },
+  "dependencies": {}
+}

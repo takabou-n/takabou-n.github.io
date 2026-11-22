@@ -1,0 +1,116 @@
+{
+  "_note": "Claude が用意した中身。文言は一字も変えずに使う（Antigravity は編集しない）",
+  "siteTitle": "たかぼう｜AI活用支援・AI素材クリエイター",
+  "siteDescription": "AIの導入・活用のご相談から、画像・動画・音声・LPの素材づくりまで。愛知県在住、エンタメ業界で30年企画と映像演出に携わった、たかぼうの作品集です。",
+  "siteUrl": "https://takabou-n.github.io/",
+  "name": "たかぼう",
+  "role": "AI活用支援・AI素材クリエイター",
+  "region": "愛知県",
+  "icon": "assets/img/icon.png",
+  "iconAlt": "たかぼうの似顔絵イラスト",
+  "ogImage": "assets/img/ogp.jpg",
+  "catch": [
+    "AIの導入・活用のご相談から、画像・動画・音声の素材づくりまで。",
+    "ものづくり30年の目で、一つずつ確かめて仕上げます。"
+  ],
+  "contactLead": "たかぼうへのご相談はこちらから",
+  "about": [
+    {
+      "id": "services",
+      "heading": "できること",
+      "blocks": [
+        {
+          "title": "AI導入・活用支援",
+          "lead": "「AIが便利らしいけど、何に使えばいいのかわからない」という方と一緒に、お仕事や毎日の困りごとの中から、AIで楽にできるところを探します。",
+          "items": [
+            "何から始めればいいかのご相談",
+            "ChatGPT・Gemini・Claude など、目的に合ったAIの選び方",
+            "文章・画像・資料づくりをAIで楽にする使い方",
+            "お店の公式LINEづくりのお手伝い"
+          ]
+        },
+        {
+          "title": "AI素材・ページづくり",
+          "lead": "AIで作ったものをそのまま出すのではなく、「見る人・聞く人に違和感がないか」を一つずつ確かめてからお渡しします。",
+          "items": [
+            "画像：サムネイル、背景画像、キャラクター",
+            "動画：AI動画素材の生成、構成、編集、テロップ入れ",
+            "音声：AIナレーションの生成・調声",
+            "LP・Webページ：構成・文章・画像・公開まで"
+          ]
+        }
+      ],
+      "note": "料金は、内容をうかがってお見積もりします。"
+    },
+    {
+      "id": "career",
+      "heading": "経歴",
+      "items": [
+        "1995年〜2025年：エンタメ業界の会社で、商品の企画開発と映像演出を担当",
+        "2023年〜2025年：AI推進プロジェクトのリーダーとして、クリエイティブの仕事にAIを取り入れる役割を担当",
+        "現在：AIの導入・活用支援と、AI素材づくりのお仕事をしています"
+      ]
+    },
+    {
+      "id": "policy",
+      "heading": "大切にしていること",
+      "items": [
+        "専門用語はできるだけ使わず、ふだんの言葉でご説明します",
+        "手を抜かず、最後までしっかり仕上げます",
+        "できないことは、できないとはっきりお伝えします"
+      ]
+    },
+    {
+      "id": "tools",
+      "heading": "使う道具",
+      "items": [
+        "文章・設計：Claude、ChatGPT、Gemini",
+        "開発：Claude Code、Antigravity",
+        "画像・動画：画像生成AI・動画生成AI、Remotion",
+        "音声：Fish Audio",
+        "公開：GitHub Pages、Cloudflare、Vercel"
+      ]
+    },
+    {
+      "id": "license",
+      "heading": "資格",
+      "items": [
+        "2次元CAD利用技術者試験2級"
+      ]
+    }
+  ],
+  "contact": {
+    "heading": "ご相談・お問い合わせ",
+    "lead": "公式LINEかメールで、お気軽にご連絡ください。",
+    "line": {
+      "label": "公式LINEで相談する",
+      "url": "https://line.me/R/ti/p/%40671jkqgd",
+      "qr": "assets/img/line_qr.png",
+      "qrAlt": "たかぼうの公式LINEの友だち追加QRコード",
+      "qrNote": "パソコンでご覧の方は、スマホでQRコードを読み取ってください"
+    },
+    "mail": {
+      "label": "メールで相談する",
+      "user": "nrnr.hawaii",
+      "domain": "gmail.com",
+      "subject": "ポートフォリオを見てのご相談"
+    }
+  },
+  "pinned": [
+    {
+      "id": "hello",
+      "title": "はじめまして、たかぼうです",
+      "image": "assets/pinned/hello.jpg",
+      "alt": "自己紹介：はじめまして、たかぼうです。エンタメ業界で30年、企画と映像演出。愛知県在住",
+      "href": "#about"
+    },
+    {
+      "id": "services",
+      "title": "できること",
+      "image": "assets/pinned/services.jpg",
+      "alt": "できること：AI活用のご相談、公式LINEの構築、AI画像、AI動画、AI音声、LP・Webページ",
+      "href": "#services"
+    }
+  ],
+  "footer": "© 2026 たかぼう　掲載している作品の画像・文章の無断転載はご遠慮ください。"
+}
