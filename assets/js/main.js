@@ -42,6 +42,7 @@
         tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
 
+      let visibleWorks = 0;
       cards.forEach((card) => {
         const isPinned = card.dataset.pinned === 'true';
         const visible =
@@ -51,8 +52,11 @@
         card.hidden = !visible;
         if (visible) {
           card.classList.add('is-visible');
+          if (!isPinned) visibleWorks += 1;
         }
       });
+      const empty = document.getElementById('works-empty');
+      if (empty) empty.hidden = visibleWorks > 0;
 
       if (shouldUpdateHash) {
         updateHashSafe('#cat=' + activeSlug, false);
@@ -121,6 +125,16 @@
 
     window.addEventListener('hashchange', handleHash);
     handleHash();
+  }
+
+  function initMailIcons() {
+    document.querySelectorAll('.js-mail-icon').forEach((link) => {
+      const user = link.dataset.u || '';
+      const domain = link.dataset.d || '';
+      if (!user || !domain) return;
+      link.href =
+        'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent(link.dataset.s || '');
+    });
   }
 
   function initMailSlots() {
@@ -212,9 +226,40 @@
     });
   }
 
+  // できること：前へ・次へのボタンで横に送る（端ではボタンを押せなくする）
+  function initSkillsScroller() {
+    const track = document.getElementById('skills-track');
+    if (!track) {
+      return;
+    }
+    const buttons = Array.from(document.querySelectorAll('.skills-btn'));
+    const step = () => {
+      const item = track.querySelector('.skill-item');
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 16;
+      const one = item ? item.getBoundingClientRect().width + gap : 240;
+      return Math.max(one, Math.floor(track.clientWidth / one) * one);
+    };
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      buttons.forEach((btn) => {
+        btn.disabled = btn.dataset.dir === '-1' ? track.scrollLeft <= 2 : track.scrollLeft >= max;
+      });
+    };
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        track.scrollBy({ left: step() * Number(btn.dataset.dir), behavior: 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   initTabs();
   initAboutNavigation();
+  initMailIcons();
   initMailSlots();
   initBottomBar();
   initCardReveal();
+  initSkillsScroller();
 })();

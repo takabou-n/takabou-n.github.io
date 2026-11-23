@@ -1,13 +1,14 @@
 {
   "_note": "Claude が用意した中身。文言は一字も変えずに使う（Antigravity は編集しない）",
-  "siteTitle": "たかぼう｜AI活用支援・AI素材クリエイター",
-  "siteDescription": "AIの導入・活用のご相談から、画像・動画・音声・LPの素材づくりまで。愛知県在住、エンタメ業界で30年企画と映像演出に携わった、たかぼうの作品集です。",
+  "siteTitle": "takabou/たかぼう｜AI活用支援・AI素材クリエイター",
+  "siteDescription": "AIの導入・活用のご相談から、画像・動画・音声・LPの素材づくりまで。愛知県在住、エンタメ業界で30年企画と映像演出に携わった、takabou/たかぼうの作品集です。",
   "siteUrl": "https://takabou-n.github.io/",
-  "name": "たかぼう",
+  "searchIndex": false,
+  "name": "takabou/たかぼう",
   "role": "AI活用支援・AI素材クリエイター",
   "region": "愛知県",
   "icon": "assets/img/icon.png",
-  "iconAlt": "たかぼうの似顔絵イラスト",
+  "iconAlt": "takabou/たかぼうの似顔絵イラスト",
   "ogImage": "assets/img/ogp.jpg",
   "catch": [
     "AIの導入・活用のご相談から、画像・動画・音声の素材づくりまで。",
@@ -64,11 +65,13 @@
       "id": "tools",
       "heading": "使う道具",
       "items": [
-        "文章・設計：Claude、ChatGPT、Gemini",
-        "開発：Claude Code、Antigravity",
-        "画像・動画：画像生成AI・動画生成AI、Remotion",
-        "音声：Fish Audio",
-        "公開：GitHub Pages、Cloudflare、Vercel"
+        {"label": "文章・設計", "lines": ["Claude、ChatGPT、Gemini"]},
+        {"label": "開発", "lines": ["Claude Code、Antigravity"]},
+        {"label": "画像", "lines": ["Stable Diffusion、Nano Banana Pro、Anima、", "Qwen-Image、FLUX.3"]},
+        {"label": "動画", "lines": ["Google Veo3、MiniMax H3、Wan2.2"]},
+        {"label": "音声", "lines": ["Fish Audio、Gemini TTS、Qwen-TTS、Irodori-TTS"]},
+        {"label": "音楽", "lines": ["Ace-Step1.5、Stable Audio"]},
+        {"label": "公開", "lines": ["GitHub Pages、Cloudflare、Vercel"]}
       ]
     },
     {
@@ -81,13 +84,19 @@
   ],
   "contact": {
     "heading": "ご相談・お問い合わせ",
-    "lead": "公式LINEかメールで、お気軽にご連絡ください。",
+    "lead": "公式LINE・Chatwork・メールで、お気軽にご連絡ください。",
     "line": {
       "label": "公式LINEで相談する",
       "url": "https://line.me/R/ti/p/%40671jkqgd",
       "qr": "assets/img/line_qr.png",
-      "qrAlt": "たかぼうの公式LINEの友だち追加QRコード",
+      "qrAlt": "takabou/たかぼうの公式LINEの友だち追加QRコード",
       "qrNote": "パソコンでご覧の方は、スマホでQRコードを読み取ってください"
+    },
+    "chatwork": {
+      "label": "Chatworkで相談する",
+      "url": "https://www.chatwork.com/takabou_AI",
+      "id": "takabou_AI",
+      "idLabel": "Chatwork ID"
     },
     "mail": {
       "label": "メールで相談する",
@@ -98,19 +107,80 @@
   },
   "pinned": [
     {
-      "id": "hello",
-      "title": "はじめまして、たかぼうです",
+      "id": "profile",
+      "title": "はじめまして、takabou/たかぼうです",
       "image": "assets/pinned/hello.jpg",
-      "alt": "自己紹介：はじめまして、たかぼうです。エンタメ業界で30年、企画と映像演出。愛知県在住",
-      "href": "#about"
-    },
-    {
-      "id": "services",
-      "title": "できること",
-      "image": "assets/pinned/services.jpg",
-      "alt": "できること：AI活用のご相談、公式LINEの構築、AI画像、AI動画、AI音声、LP・Webページ",
-      "href": "#services"
+      "alt": "自己紹介：はじめまして、takabou/たかぼうです。エンタメ業界で30年、企画と映像演出。できること：AI活用のご相談、公式LINEの構築、AI画像、AI動画、AI音声、LP・Webページ",
+      "href": "#about",
+      "media": "自己紹介",
+      "caption": "【自己紹介】はこちらです",
+      "genre": "プロフィール",
+      "view": "プロフィールを見る"
     }
   ],
-  "footer": "© 2026 たかぼう　掲載している作品の画像・文章の無断転載はご遠慮ください。"
+  "skills": {
+    "heading": "できること",
+    "lead": "作品としての実績はこれからですが、ご相談いただけるお仕事です。",
+    "prevLabel": "前へ",
+    "nextLabel": "次へ",
+    "items": [
+      {
+        "id": "ai-support",
+        "title": "AI導入支援／活用サポート",
+        "image": "assets/skills/ai-support.jpg",
+        "alt": "AI導入支援／活用サポート：困りごとの整理・ツール選び・使い方まで一緒に"
+      },
+      {
+        "id": "claude-code",
+        "title": "Claude Code の使い方サポート",
+        "image": "assets/skills/claude-code.jpg",
+        "alt": "Claude Code の使い方サポート：最初の設定から・作りたい物を形に・つまずいたら質問OK"
+      },
+      {
+        "id": "antigravity",
+        "title": "Antigravity の使い方サポート",
+        "image": "assets/skills/antigravity.jpg",
+        "alt": "Antigravity の使い方サポート：最初の設定から・指示の書き方・仕上がりの確かめ方"
+      },
+      {
+        "id": "narration",
+        "title": "AIナレーション作成",
+        "image": "assets/skills/narration.jpg",
+        "alt": "AIナレーション作成：原稿の読み上げ・声と雰囲気選び・読み間違いの確認"
+      },
+      {
+        "id": "voice-model",
+        "title": "オリジナルボイスモデル作成",
+        "image": "assets/skills/voice-model.jpg",
+        "alt": "オリジナルボイスモデル作成：録音の整理・声の学習・パソコンで使える形に"
+      },
+      {
+        "id": "character",
+        "title": "オリジナルキャラクター作成",
+        "image": "assets/skills/character.jpg",
+        "alt": "オリジナルキャラクター作成：キャラ設定・同じ顔で描き分け・スタンプや挿絵にも"
+      },
+      {
+        "id": "ai-video",
+        "title": "AI動画作成",
+        "image": "assets/skills/ai-video.jpg",
+        "alt": "AI動画作成：企画・構成・画像から動画へ・編集と効果音"
+      },
+      {
+        "id": "mv",
+        "title": "MV動画作成",
+        "image": "assets/skills/mv.jpg",
+        "alt": "MV動画作成：曲に合わせた構成・映像の生成・テロップ入れ"
+      }
+    ]
+  },
+  "breadcrumbTop": "トップページ",
+  "footer": "© 2026 takabou　掲載している作品の画像・文章の無断転載はご遠慮ください。",
+  "headerLinks": {
+    "lineLabel": "公式LINE",
+    "chatworkLabel": "Chatwork",
+    "mailLabel": "メール",
+    "ctaLead": "たかぼうへの問い合わせはこちらから",
+    "ctaLabel": "問い合わせ"
+  }
 }

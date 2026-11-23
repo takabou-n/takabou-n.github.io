@@ -1,17 +1,17 @@
 # たかぼうのポートフォリオサイト
 
-GitHub Pages 向けの静的ポートフォリオサイトです。`data/` の JSON ファイルから `index.html`、作品詳細ページ（`works/<id>.html`）、`404.html`、`sitemap.xml`、`robots.txt` を生成します。
+GitHub Pages 向けの静的ポートフォリオサイトです。`data/` の JSON ファイルから `index.html`、作品詳細ページ（`works/<id>.html`）、`404.html`、`robots.txt` を生成します（`data/site.json` の `searchIndex` が `true` のときだけ `sitemap.xml` も生成。いまは `false`＝全ページに noindex を入れ、検索には載せない設定）。
 
 外部パッケージへの依存はなく、Node.js（標準機能のみ）で動作します。
 
 ## ファイル構成
 
-- `data/site.json`：プロフィール・自己紹介・連絡先・ピン留めの設定
+- `data/site.json`：プロフィール・自己紹介・連絡先・ピン留め・「できること」のバナー・検索に載せるか（`searchIndex`）の設定
 - `data/works.json`：カテゴリと作品一覧
 - `assets/css/style.css`：スタイルシート
 - `assets/js/main.js`：カテゴリタブ、自己紹介の開閉、メールアドレス組み立て、下部バー制御
 - `assets/img/`・`assets/pinned/`・`assets/works/`：画像ファイル
-- `tools/build.js`：HTML・サイトマップ等の生成スクリプト
+- `tools/build.js`：HTML 等の生成スクリプト
 - `tools/check.js`：データ・リンク・表示文言・セキュリティ等の点検スクリプト
 - `tools/serve.js`：ローカル確認用サーバー（`127.0.0.1:5190`）
 
@@ -43,7 +43,7 @@ npm run serve
 
 ## 公開のしかた（GitHub Pages）
 
-1. 生成済みの `index.html`、`works/*.html`、`404.html`、`sitemap.xml`、`robots.txt` を含めて、`main` ブランチにコミットし、GitHub の `takabou-n.github.io` リポジトリへ push します。
+1. 生成済みの `index.html`、`works/*.html`、`404.html`、`robots.txt` を含めて、`main` ブランチにコミットし、GitHub の `takabou-n.github.io` リポジトリへ push します。
 2. GitHub リポジトリの **Settings > Pages** を開きます。
 3. **Build and deployment** の Source で **Deploy from a branch** を選び、Branch を **`main`**、フォルダを **`/ (root)`** に設定して保存します。
 4. 公開後、`https://takabou-n.github.io/` で表示を確認します。

@@ -1,17 +1,42 @@
 {
   "_note": "Claude が用意した作品リスト。文言は一字も変えずに使う。並び順はこの配列の順。作品を足すときはここに1件足すだけで、build で一覧と詳細ページができる",
   "categories": [
-    { "name": "すべて", "slug": "all" },
-    { "name": "Web・LP", "slug": "web" },
-    { "name": "AI音声・自作ツール", "slug": "tool" },
-    { "name": "LINEスタンプ", "slug": "stamp" },
-    { "name": "発信・note", "slug": "note" }
+    {
+      "name": "すべて",
+      "slug": "all"
+    },
+    {
+      "name": "Web・LP",
+      "slug": "web"
+    },
+    {
+      "name": "自作ツール",
+      "slug": "tool"
+    },
+    {
+      "name": "登壇・セミナー",
+      "slug": "talk"
+    },
+    {
+      "name": "LINE構築",
+      "slug": "line"
+    },
+    {
+      "name": "LINEスタンプ",
+      "slug": "stamp"
+    },
+    {
+      "name": "発信・note",
+      "slug": "note"
+    }
   ],
   "works": [
     {
       "id": "school-lp",
       "title": "スクールの申込LP",
       "category": "Web・LP",
+      "media": "Webページ",
+      "caption": "AIスクール／LP作成",
       "card": "assets/works/school-lp/card.jpg",
       "cardAlt": "スクールの申込LPの紹介画像。パソコンとスマホで表示した画面",
       "description": [
@@ -19,24 +44,54 @@
         "PASONAの型で原稿を書き、画像の生成からスマホ・パソコン両方の見た目、動き、公開まで一人で仕上げました。",
         "改行はスマホ2種類とパソコンの幅でチェックして直し、卒業課題として提出・公開しました。"
       ],
-      "role": ["構成・コピー", "画像", "コーディング", "公開"],
-      "tools": ["ChatGPT（原稿）", "Claude Code（HTML/CSS）", "Cloudflare（画像生成・公開）"],
+      "role": [
+        "構成・コピー",
+        "画像",
+        "コーディング",
+        "公開"
+      ],
+      "tools": [
+        "ChatGPT（原稿）",
+        "Claude Code（HTML/CSS）",
+        "Cloudflare（画像生成・公開）"
+      ],
       "period": "2026年10月",
       "note": "架空のオンラインAI画像スクールを想定した、AIコピー部の卒業課題です。",
       "links": [
-        { "label": "実際のページを見る", "url": "https://ai-gazo-school-lp.pages.dev/" }
+        {
+          "label": "実際のページを見る",
+          "url": "https://ai-gazo-school-lp.pages.dev/"
+        }
       ],
       "gallery": [
-        { "src": "assets/works/school-lp/lp_pc.jpg", "alt": "パソコンで表示した最初の画面", "kind": "pc" },
-        { "src": "assets/works/school-lp/lp_sp1.jpg", "alt": "スマホで表示した最初の画面", "kind": "sp" },
-        { "src": "assets/works/school-lp/lp_sp2.jpg", "alt": "スマホで表示した「こんな悩みはありませんか？」の部分", "kind": "sp" },
-        { "src": "assets/works/school-lp/lp_sp3.jpg", "alt": "スマホで表示した「流れを知っておく」の部分", "kind": "sp" }
+        {
+          "src": "assets/works/school-lp/lp_pc.jpg",
+          "alt": "パソコンで表示した最初の画面",
+          "kind": "pc"
+        },
+        {
+          "src": "assets/works/school-lp/lp_sp1.jpg",
+          "alt": "スマホで表示した最初の画面",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/school-lp/lp_sp2.jpg",
+          "alt": "スマホで表示した「こんな悩みはありませんか？」の部分",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/school-lp/lp_sp3.jpg",
+          "alt": "スマホで表示した「流れを知っておく」の部分",
+          "kind": "sp"
+        }
       ]
     },
     {
       "id": "voice-kit",
       "title": "音声づくりツール Voice Kit",
-      "category": "AI音声・自作ツール",
+      "category": "自作ツール",
+      "media": "Webアプリ",
+      "caption": "アプリ・Webサイト／ツール作成",
       "card": "assets/works/voice-kit/card.jpg",
       "cardAlt": "音声づくりツール Voice Kit の紹介画像。パソコンとスマホで表示した画面",
       "description": [
@@ -44,23 +99,164 @@
         "声・雰囲気・文章を選んで押すだけで読み上げる画面を設計し、コードを1行も書かずにAIで開発しました。",
         "2026年10月のオンライン説明会（約35名）で紹介し、Windows アプリ版と Mac でも使える Web 版も作りました。"
       ],
-      "role": ["企画", "設計", "AIで開発", "公開"],
-      "tools": ["Fish Audio（音声）", "Claude（設計と指示書）", "Antigravity（開発）", "Vercel（公開）"],
+      "role": [
+        "企画",
+        "設計",
+        "AIで開発",
+        "公開"
+      ],
+      "tools": [
+        "Fish Audio（音声）",
+        "Claude（設計と指示書）",
+        "Antigravity（開発）",
+        "Vercel（公開）"
+      ],
       "period": "2026年10月〜",
       "note": "公開デモ版は、1日20回まで試せます。",
       "links": [
-        { "label": "公開デモを試す", "url": "https://voice-kit-web.vercel.app" }
+        {
+          "label": "公開デモを試す",
+          "url": "https://voice-kit-web.vercel.app"
+        }
       ],
       "gallery": [
-        { "src": "assets/works/voice-kit/vk_pc.jpg", "alt": "パソコンで表示した画面（簡単モード）", "kind": "pc" },
-        { "src": "assets/works/voice-kit/vk_sp1.jpg", "alt": "スマホで表示した使い方の4ステップ", "kind": "sp" },
-        { "src": "assets/works/voice-kit/vk_sp2.jpg", "alt": "スマホで表示した声のキャラクターと雰囲気の選択", "kind": "sp" }
+        {
+          "src": "assets/works/voice-kit/vk_pc.jpg",
+          "alt": "パソコンで表示した画面（簡単モード）",
+          "kind": "pc"
+        },
+        {
+          "src": "assets/works/voice-kit/vk_sp1.jpg",
+          "alt": "スマホで表示した使い方の4ステップ",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/voice-kit/vk_sp2.jpg",
+          "alt": "スマホで表示した声のキャラクターと雰囲気の選択",
+          "kind": "sp"
+        }
+      ]
+    },
+    {
+      "id": "frecafe-talk",
+      "title": "オンラインセミナー登壇「自作の音声アプリ」の作り方",
+      "category": "登壇・セミナー",
+      "media": "セミナー",
+      "caption": "フリカフェ／セミナー登壇",
+      "card": "assets/works/frecafe-talk/card.jpg",
+      "cardAlt": "フリカフェ #20 の告知画像。AIで初心者でも作れる！自作の音声アプリの作り方セミナー、2026年10月31日（土）19:00〜20:30、講師 たかぼう",
+      "description": [
+        "「AIの声を使ってみたい。でも難しそう」という人に向けて、オンラインイベント「フリカフェ」#20で、自作の音声アプリ Voice Kit の使い方を説明する回に登壇しました。",
+        "APIキーを「電化製品の電源コード」にたとえるなど、専門用語に頼らないスライド24枚を作り、画面を見せながらその場で声を作る実演をしました。",
+        "終わったあとのアンケートでは「満足」以上・「使ってみたい」がそれぞれ10件集まり、個別のご相談にもつながりました。"
+      ],
+      "role": [
+        "企画・構成",
+        "スライド",
+        "実演",
+        "アンケート"
+      ],
+      "tools": [
+        "Voice Kit（実演）",
+        "Google AI Studio・Fish Audio（実演した声）",
+        "Google フォーム（アンケート）"
+      ],
+      "period": "2026年10月31日（オンライン・約90分）",
+      "note": "",
+      "links": [
+        {
+          "label": "イベントのページを見る",
+          "url": "https://frecafe-020t.peatix.com/"
+        },
+        {
+          "label": "登壇のお知らせ記事を読む（note）",
+          "url": "https://note.com/nrnr_hawaii/n/n852aae7b4644"
+        }
+      ],
+      "gallery": [
+        {
+          "src": "assets/works/frecafe-talk/slide01.jpg",
+          "alt": "スライド1枚目「文章を貼るだけで、AIが読み上げる。Voice Kit 使い方説明会」",
+          "kind": "wide"
+        },
+        {
+          "src": "assets/works/frecafe-talk/slide04.jpg",
+          "alt": "スライド「今日の流れ（説明60分＋質問30分）」",
+          "kind": "wide"
+        },
+        {
+          "src": "assets/works/frecafe-talk/slide06.jpg",
+          "alt": "スライド「Voice Kit でできること」",
+          "kind": "wide"
+        },
+        {
+          "src": "assets/works/frecafe-talk/slide10.jpg",
+          "alt": "スライド「電化製品にたとえると、こうなります」（APIキーの説明）",
+          "kind": "wide"
+        }
+      ]
+    },
+    {
+      "id": "line-official",
+      "title": "放課後等デイサービスの公式LINE構築",
+      "category": "LINE構築",
+      "media": "LINE",
+      "caption": "放課後デイサービス／LINE構築",
+      "card": "assets/works/line-official/card.jpg",
+      "cardAlt": "放課後等デイサービスの公式LINE構築の紹介画像。実際のトーク画面2枚（あいさつと相談メニュー）",
+      "description": [
+        "電話とメールでしか問い合わせを受けていなかった福岡県の放課後等デイサービスに、見学や相談の窓口として公式LINEを作りました。",
+        "保護者が迷わないよう相談メニューを4つに絞り、ボタンを押しても文字で送っても必ず返事が届くように、あいさつ・自動応答・リッチメニュー・タグを設計しました。",
+        "期限より5日早く構築を終え、ホームページからLINEへの入口もでき、いまは事業所の方が運用しています。"
+      ],
+      "role": [
+        "ヒアリング",
+        "設計",
+        "構築",
+        "引き渡し"
+      ],
+      "tools": [
+        "LINE公式アカウント",
+        "Lメッセージ（配信・自動応答）",
+        "Claude（文面と設計の相談）"
+      ],
+      "period": "2026年7月〜9月",
+      "note": "画面は実際のものです（電話番号はぼかしています）。",
+      "links": [],
+      "gallery": [
+        {
+          "src": "assets/works/line-official/real_01.jpg",
+          "alt": "友だち追加のあいさつとリッチメニュー（実際の画面）",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/line-official/real_02.jpg",
+          "alt": "「無料相談」を押したあとの相談メニュー（実際の画面）",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/line-official/real_03.jpg",
+          "alt": "見学・体験のご案内（実際の画面）",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/line-official/real_04.jpg",
+          "alt": "よくあるご質問への返事（実際の画面）",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/line-official/real_05.jpg",
+          "alt": "文字で送ったときの返事。電話番号はぼかしています（実際の画面）",
+          "kind": "sp"
+        }
       ]
     },
     {
       "id": "line-stamp-chako",
       "title": "LINEスタンプ「三毛猫女子・西宮ちゃこ」",
       "category": "LINEスタンプ",
+      "media": "画像",
+      "caption": "オリジナルキャラ／スタンプ作成",
       "card": "assets/works/line-stamp-chako/card.jpg",
       "cardAlt": "LINEスタンプ「三毛猫女子・西宮ちゃこ」の紹介画像。スタンプ12点",
       "description": [
@@ -68,33 +264,97 @@
         "毎日使えるあいさつや返事を中心にセリフを考え、AIで同じキャラのまま描き分けて、LINEの規格に整えました。",
         "第1弾は初めての申請で承認され、第2弾とあわせて2セット・56点を販売しています。"
       ],
-      "role": ["キャラ設定", "セリフ", "AI画像", "申請"],
-      "tools": ["画像生成AI", "Python（背景を抜いて規格のサイズに整える）"],
+      "role": [
+        "キャラ設定",
+        "セリフ",
+        "AI画像",
+        "申請"
+      ],
+      "tools": [
+        "画像生成AI",
+        "Python（背景を抜いて規格のサイズに整える）"
+      ],
       "period": "2026年8月〜9月",
       "note": "",
       "links": [
-        { "label": "第1弾（16点）を LINE STORE で見る", "url": "https://store.line.me/stickershop/product/36010166/ja" },
-        { "label": "第2弾（40点）を LINE STORE で見る", "url": "https://store.line.me/stickershop/product/36620665/ja" }
+        {
+          "label": "第1弾（16点）を LINE STORE で見る",
+          "url": "https://store.line.me/stickershop/product/36010166/ja"
+        },
+        {
+          "label": "第2弾（40点）を LINE STORE で見る",
+          "url": "https://store.line.me/stickershop/product/36620665/ja"
+        }
       ],
       "gallery": [
-        { "src": "assets/works/line-stamp-chako/a01.png", "alt": "スタンプ「ありがとう」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/a02.png", "alt": "スタンプ「おはよう」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/b02.png", "alt": "スタンプ「やっほー！」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/a05.png", "alt": "スタンプ「了解です」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/b10.png", "alt": "スタンプ「仕事中です」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/b18.png", "alt": "スタンプ「猫パンチ！」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/a12.png", "alt": "スタンプ「ファイト！」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/b24.png", "alt": "スタンプ「それな！」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/b28.png", "alt": "スタンプ「待ってるね」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/b08.png", "alt": "スタンプ「お昼寝します…」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/a08.png", "alt": "スタンプ「おやすみ」", "kind": "sticker" },
-        { "src": "assets/works/line-stamp-chako/b40.png", "alt": "スタンプ「また遊ぼうね！」", "kind": "sticker" }
+        {
+          "src": "assets/works/line-stamp-chako/a01.png",
+          "alt": "スタンプ「ありがとう」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/a02.png",
+          "alt": "スタンプ「おはよう」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/b02.png",
+          "alt": "スタンプ「やっほー！」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/a05.png",
+          "alt": "スタンプ「了解です」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/b10.png",
+          "alt": "スタンプ「仕事中です」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/b18.png",
+          "alt": "スタンプ「猫パンチ！」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/a12.png",
+          "alt": "スタンプ「ファイト！」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/b24.png",
+          "alt": "スタンプ「それな！」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/b28.png",
+          "alt": "スタンプ「待ってるね」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/b08.png",
+          "alt": "スタンプ「お昼寝します…」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/a08.png",
+          "alt": "スタンプ「おやすみ」",
+          "kind": "sticker"
+        },
+        {
+          "src": "assets/works/line-stamp-chako/b40.png",
+          "alt": "スタンプ「また遊ぼうね！」",
+          "kind": "sticker"
+        }
       ]
     },
     {
       "id": "note-series",
       "title": "note連載「50代の早期退職とAI」",
       "category": "発信・note",
+      "media": "記事",
+      "caption": "note連載／文書作成",
       "card": "assets/works/note-series/card.jpg",
       "cardAlt": "note連載の紹介画像。記事の見出し画像6枚",
       "description": [
@@ -102,21 +362,65 @@
         "毎回、AIに自分の体験を聞き取ってもらう形で素材を集め、本文・見出し画像・挿絵まで自分でそろえています。",
         "2026年8月から続けており、AIの講座の受講記や、自作ツールの話も届けています。"
       ],
-      "role": ["取材", "執筆", "見出し画像", "挿絵"],
-      "tools": ["Claude（構成・下書きの手伝い）", "画像生成AI（挿絵）", "HTML（見出し画像）"],
+      "role": [
+        "取材",
+        "執筆",
+        "見出し画像",
+        "挿絵"
+      ],
+      "tools": [
+        "Claude（構成・下書きの手伝い）",
+        "画像生成AI（挿絵）",
+        "HTML（見出し画像）"
+      ],
       "period": "2026年8月〜（連載中）",
       "note": "",
       "links": [
-        { "label": "noteで記事を読む", "url": "https://note.com/nrnr_hawaii" }
+        {
+          "label": "noteで記事を読む",
+          "url": "https://note.com/nrnr_hawaii"
+        }
       ],
       "gallery": [
-        { "src": "assets/works/note-series/header1.jpg", "alt": "連載第1号の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/ndebab7d94742" },
-        { "src": "assets/works/note-series/header2.jpg", "alt": "音声アプリの説明会のお知らせ記事の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/n852aae7b4644" },
-        { "src": "assets/works/note-series/header3.jpg", "alt": "AI×SNS部 受講記#5の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/n5ea3703d0528" },
-        { "src": "assets/works/note-series/header4.jpg", "alt": "働き方について書いた短い記事の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/na08fa5ac47a1" },
-        { "src": "assets/works/note-series/header5.jpg", "alt": "夕食の献立をAIに相談した記事の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/n2fb17ff5b717" },
-        { "src": "assets/works/note-series/header6.jpg", "alt": "AIデザイン部に申し込んだ記事の見出し画像", "kind": "wide", "url": "https://note.com/nrnr_hawaii/n/n1708b0b18e18" }
+        {
+          "src": "assets/works/note-series/header1.jpg",
+          "alt": "連載第1号の見出し画像",
+          "kind": "wide",
+          "url": "https://note.com/nrnr_hawaii/n/ndebab7d94742"
+        },
+        {
+          "src": "assets/works/note-series/header2.jpg",
+          "alt": "音声アプリの説明会のお知らせ記事の見出し画像",
+          "kind": "wide",
+          "url": "https://note.com/nrnr_hawaii/n/n852aae7b4644"
+        },
+        {
+          "src": "assets/works/note-series/header3.jpg",
+          "alt": "AI×SNS部 受講記#5の見出し画像",
+          "kind": "wide",
+          "url": "https://note.com/nrnr_hawaii/n/n5ea3703d0528"
+        },
+        {
+          "src": "assets/works/note-series/header4.jpg",
+          "alt": "働き方について書いた短い記事の見出し画像",
+          "kind": "wide",
+          "url": "https://note.com/nrnr_hawaii/n/na08fa5ac47a1"
+        },
+        {
+          "src": "assets/works/note-series/header5.jpg",
+          "alt": "夕食の献立をAIに相談した記事の見出し画像",
+          "kind": "wide",
+          "url": "https://note.com/nrnr_hawaii/n/n2fb17ff5b717"
+        },
+        {
+          "src": "assets/works/note-series/header6.jpg",
+          "alt": "AIデザイン部に申し込んだ記事の見出し画像",
+          "kind": "wide",
+          "url": "https://note.com/nrnr_hawaii/n/n1708b0b18e18"
+        }
       ]
     }
-  ]
+  ],
+  "emptyMessage": "この分野の作品は、ただいま準備中です。",
+  "viewLabel": "作品を見る"
 }

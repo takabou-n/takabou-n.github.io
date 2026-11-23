@@ -137,6 +137,7 @@ function renderHead({
     '  <meta name="viewport" content="width=device-width, initial-scale=1">',
     `  <title>${esc(title)}</title>`,
     `  <meta name="description" content="${esc(description)}">`,
+    SEARCH_INDEX ? '' : '  <meta name="robots" content="noindex">',
     `  <link rel="canonical" href="${esc(canonicalUrl)}">`,
     `  <link rel="icon" type="image/png" href="${esc(relPrefix)}assets/img/icon.png">`,
     `  <meta property="og:title" content="${esc(title)}">`,
@@ -147,7 +148,7 @@ function renderHead({
     '  <meta name="twitter:card" content="summary_large_image">',
     '  <link rel="preconnect" href="https://fonts.googleapis.com">',
     '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-    '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap">',
+    '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">',
     `  <link rel="stylesheet" href="${esc(relPrefix)}assets/css/style.css">`,
     `  <script src="${esc(relPrefix)}assets/js/main.js" defer></script>`,
     '</head>',
@@ -161,6 +162,54 @@ function renderHead({
  * @param {string} contactHref
  * @returns {string}
  */
+const ICON_LINE = '<svg class="icon-line" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#06C755"/><path fill="#FFFFFF" d="M16 6.5c-5.8 0-10.5 3.8-10.5 8.5 0 4.2 3.7 7.7 8.8 8.4.3.1.8.2.9.5.1.3.1.7 0 1l-.2.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6.1 1.5-1.6 2.4-3.4 2.4-5.3C26.5 10.3 21.8 6.5 16 6.5z"/><text x="16" y="17.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.6" font-weight="700" fill="#06C755">LINE</text></svg>';
+const ICON_MAIL = '<svg class="icon-mail" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7.5l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICON_EYE = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>';
+const ICON_TAG = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M3 12.6V4.5A1.5 1.5 0 0 1 4.5 3h8.1l8.4 8.4a1.5 1.5 0 0 1 0 2.1l-7.5 7.5a1.5 1.5 0 0 1-2.1 0z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8" cy="8" r="1.6" fill="currentColor"/></svg>';
+
+const ICON_PREV = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICON_NEXT = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+/**
+ * Render the "できること" section: square banners in one row, scrolled sideways.
+ * @param {object} skills
+ * @returns {string}
+ */
+function renderSkillsSection(skills) {
+  if (!skills || !Array.isArray(skills.items) || skills.items.length === 0) {
+    return '';
+  }
+  const items = skills.items
+    .map((item) => {
+      const img = renderImage(item.image, item.alt, '', { className: 'skill-image', lazy: true });
+      return [
+        '        <li class="skill-item">',
+        `          <div class="skill-thumb">${img}</div>`,
+        '        </li>',
+      ].join('\n');
+    })
+    .join('\n');
+  return [
+    '  <section class="skills-section" id="skills" aria-labelledby="skills-heading">',
+    '    <div class="container">',
+    '      <div class="skills-head">',
+    '        <div>',
+    `          <h2 class="section-heading" id="skills-heading">${esc(skills.heading)}</h2>`,
+    `          <p class="skills-lead">${esc(skills.lead)}</p>`,
+    '        </div>',
+    '        <div class="skills-nav">',
+    `          <button type="button" class="skills-btn" data-dir="-1" aria-label="${esc(skills.prevLabel)}" aria-controls="skills-track">${ICON_PREV}</button>`,
+    `          <button type="button" class="skills-btn" data-dir="1" aria-label="${esc(skills.nextLabel)}" aria-controls="skills-track">${ICON_NEXT}</button>`,
+    '        </div>',
+    '      </div>',
+    '      <ul class="skills-track" id="skills-track" tabindex="0" aria-label="できることの一覧（横にスクロールできます）">',
+    items,
+    '      </ul>',
+    '    </div>',
+    '  </section>',
+  ].join('\n');
+}
+
 function renderHeader(site, relPrefix, contactHref) {
   const iconImg = renderImage(site.icon, site.iconAlt, relPrefix, {
     className: 'header-icon',
@@ -169,11 +218,21 @@ function renderHeader(site, relPrefix, contactHref) {
   return [
     '<header class="site-header">',
     '  <div class="container header-inner">',
-    `    <a class="site-brand" href="${esc(relPrefix)}index.html">`,
-    `      ${iconImg}`,
-    `      <span class="site-brand-name">${esc(site.name)}</span>`,
-    '    </a>',
-    `    <a class="btn btn-primary btn-header" href="${esc(contactHref)}">問い合わせ</a>`,
+    '    <div class="header-left">',
+    `      <a class="site-brand" href="${esc(relPrefix)}index.html">`,
+    `        ${iconImg}`,
+    `        <span class="site-brand-name">${esc(site.name)}</span>`,
+    '      </a>',
+    '      <div class="header-links">',
+    `        <a class="header-link header-link-line" href="${esc(site.contact.line.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(site.headerLinks.lineLabel)}" title="${esc(site.headerLinks.lineLabel)}">${ICON_LINE}</a>`,
+    `        <a class="header-link header-link-chatwork" href="${esc(site.contact.chatwork.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(site.headerLinks.chatworkLabel)}" title="${esc(site.headerLinks.chatworkLabel)}"><img class="icon-chatwork" src="${esc(relPrefix)}assets/img/chatwork_icon.png" alt="" width="22" height="22"></a>`,
+    `        <a class="header-link header-link-mail js-mail-icon" href="${esc(contactHref)}" data-u="${esc(site.contact.mail.user)}" data-d="${esc(site.contact.mail.domain)}" data-s="${esc(site.contact.mail.subject)}" aria-label="${esc(site.headerLinks.mailLabel)}" title="${esc(site.headerLinks.mailLabel)}">${ICON_MAIL}</a>`,
+    '      </div>',
+    '    </div>',
+    '    <div class="header-cta">',
+    `      <span class="header-cta-lead">${esc(site.headerLinks.ctaLead)}</span>`,
+    `      <a class="btn btn-primary btn-header" href="${esc(contactHref)}">${ICON_MAIL}<span>${esc(site.headerLinks.ctaLabel)}</span></a>`,
+    '    </div>',
     '  </div>',
     '</header>',
   ].join('\n');
@@ -259,7 +318,20 @@ function renderAboutSection(aboutList) {
         parts.push('<div class="about-blocks">', blocksHtml, '</div>');
       } else if (Array.isArray(sec.items)) {
         const lis = sec.items
-          .map((item) => `  <li>${esc(item)}</li>`)
+          .map((item) => {
+            if (item && typeof item === 'object') {
+              const lines = (item.lines || [])
+                .map((line) =>
+                  line
+                    .split('、')
+                    .map((part, i, arr) => (part ? `<span class="about-tool">${esc(part)}${i < arr.length - 1 ? '、' : ''}</span>` : ''))
+                    .join('')
+                )
+                .join('<br>');
+              return `  <li><span class="about-row"><span class="about-label">${esc(item.label)}：</span><span class="about-value">${lines}</span></span></li>`;
+            }
+            return `  <li>${esc(item)}</li>`;
+          })
           .join('\n    ');
         parts.push('<ul class="about-list">', lis, '</ul>');
       }
@@ -301,6 +373,10 @@ function renderCard({
   relPrefix,
   catSlug,
   isPinned = false,
+  media = '',
+  genre = '',
+  viewText = '',
+  caption = '',
 }) {
   const thumb = renderImage(imagePath, imageAlt, relPrefix, {
     className: 'card-image',
@@ -313,17 +389,20 @@ function renderCard({
   if (isPinned) {
     dataAttrs.push('data-pinned="true"');
   }
-  const badgeClass = isPinned ? 'card-badge card-badge-pinned' : 'card-badge';
+  const overlay = [
+    '<span class="card-overlay" aria-hidden="true">',
+    media ? `<span class="ov-media">${esc(media)}</span>` : '',
+    viewText ? `<span class="ov-view">${ICON_EYE}<span>${esc(viewText)}</span></span>` : '',
+    genre ? `<span class="ov-genre">${ICON_TAG}<span>${esc(genre)}</span></span>` : '',
+    '</span>',
+  ].join('');
 
   return [
-    `<a class="work-card" href="${esc(href)}"${dataAttrs.length ? ' ' + dataAttrs.join(' ') : ''}>`,
-    `  <div class="card-thumb">${thumb}</div>`,
-    '  <div class="card-body">',
-    `    <h3 class="card-title">${esc(title)}</h3>`,
-    `    <span class="${badgeClass}">${esc(badgeText)}</span>`,
-    '  </div>',
+    `<a class="work-card${isPinned ? ' work-card-pinned' : ''}" href="${esc(href)}"${dataAttrs.length ? ' ' + dataAttrs.join(' ') : ''}>`,
+    `  <div class="card-thumb">${thumb}${overlay}</div>`,
+    `  <h3 class="card-caption">${esc(caption || title)}</h3>`,
     '</a>',
-  ].join('\n');
+  ].filter(Boolean).join('\n');
 }
 
 /**
@@ -370,6 +449,10 @@ function buildIndexHtml(site, worksData, categorySlugMap) {
       relPrefix: '',
       catSlug: 'all',
       isPinned: true,
+      media: pin.media || '',
+      genre: pin.genre || '',
+      viewText: pin.view || '',
+      caption: pin.caption || '',
     })
   );
 
@@ -384,6 +467,10 @@ function buildIndexHtml(site, worksData, categorySlugMap) {
       relPrefix: '',
       catSlug: slug,
       isPinned: false,
+      media: work.media || '',
+      genre: work.category,
+      viewText: worksData.viewLabel || '',
+      caption: work.caption || '',
     });
   });
 
@@ -402,15 +489,15 @@ function buildIndexHtml(site, worksData, categorySlugMap) {
     '  <section class="profile-section" id="top">',
     '    <div class="container profile-inner">',
     `      ${profileIcon}`,
-    `      <p class="profile-role">${esc(site.role)}</p>`,
-    `      <h1 class="profile-name">${esc(site.name)}</h1>`,
-    `      <p class="profile-region"><span class="region-dot" aria-hidden="true"></span><span>${esc(site.region)}</span></p>`,
-    '      <div class="profile-catch">',
-    `        ${catchHtml}`,
-    '      </div>',
-    '      <div class="profile-cta">',
-    `        <p class="profile-contact-lead">${esc(site.contactLead)}</p>`,
-    '        <a class="btn btn-primary" href="#contact">相談する</a>',
+    '      <div class="profile-text">',
+    `        <p class="profile-role">${esc(site.role)}</p>`,
+    '        <div class="profile-name-row">',
+    `          <h1 class="profile-name">${esc(site.name)}</h1>`,
+    `          <p class="profile-region"><span class="region-dot" aria-hidden="true"></span><span>${esc(site.region)}</span></p>`,
+    '        </div>',
+    '        <div class="profile-catch">',
+    `          ${catchHtml}`,
+    '        </div>',
     '      </div>',
     '    </div>',
     '  </section>',
@@ -423,8 +510,10 @@ function buildIndexHtml(site, worksData, categorySlugMap) {
     '      <div class="card-grid" id="card-grid">',
     pinnedCards.concat(workCards).join('\n'),
     '      </div>',
+    `      <p class="works-empty" id="works-empty" hidden>${esc(worksData.emptyMessage || '')}</p>`,
     '    </div>',
     '  </section>',
+    renderSkillsSection(site.skills),
     '  <section class="contact-section" id="contact">',
     '    <div class="container">',
     '      <div class="contact-panel">',
@@ -432,9 +521,13 @@ function buildIndexHtml(site, worksData, categorySlugMap) {
     `        <p class="contact-lead">${esc(site.contact.lead)}</p>`,
     '        <div class="contact-grid">',
     '          <div class="contact-box">',
-    `            <a class="btn btn-primary" href="${esc(site.contact.line.url)}" target="_blank" rel="noopener noreferrer">${esc(site.contact.line.label)}</a>`,
+    `            <a class="btn btn-line" href="${esc(site.contact.line.url)}" target="_blank" rel="noopener noreferrer">${esc(site.contact.line.label)}</a>`,
     `            <div class="contact-qr-wrap">${qrImg}</div>`,
     `            <p class="contact-qr-note">${esc(site.contact.line.qrNote)}</p>`,
+    '          </div>',
+    '          <div class="contact-box contact-box-chatwork">',
+    `            <a class="btn btn-secondary" href="${esc(site.contact.chatwork.url)}" target="_blank" rel="noopener noreferrer">${esc(site.contact.chatwork.label)}</a>`,
+    `            <p class="contact-id">${esc(site.contact.chatwork.idLabel)}：${esc(site.contact.chatwork.id)}</p>`,
     '          </div>',
     '          <div class="contact-box contact-box-mail">',
     `            ${renderMailSlot(site.contact.mail)}`,
@@ -590,6 +683,10 @@ function buildWorkHtml(site, work, allWorks, categorySlugMap) {
         relPrefix,
         catSlug: categorySlugMap.get(other.category),
         isPinned: false,
+        media: other.media || '',
+        genre: other.category,
+        viewText: VIEW_LABEL,
+        caption: other.caption || '',
       })
     )
     .join('\n');
@@ -603,7 +700,7 @@ function buildWorkHtml(site, work, allWorks, categorySlugMap) {
     '<main class="site-main work-main">',
     '  <div class="container">',
     '    <nav class="breadcrumb" aria-label="パンくずリスト">',
-    `      <a href="../index.html">${esc(site.name)}</a>`,
+    `      <a href="../index.html">${esc(site.breadcrumbTop || 'トップページ')}</a>`,
     '      <span class="breadcrumb-sep" aria-hidden="true">＞</span>',
     `      <a href="../index.html#cat=${esc(catSlug)}">${esc(work.category)}</a>`,
     '      <span class="breadcrumb-sep" aria-hidden="true">＞</span>',
@@ -622,9 +719,9 @@ function buildWorkHtml(site, work, allWorks, categorySlugMap) {
     `      <div class="meta-row"><dt>使った道具</dt><dd>${esc(work.tools.join('・'))}</dd></div>`,
     `      <div class="meta-row"><dt>時期</dt><dd>${esc(work.period)}</dd></div>${noteRow}`,
     '    </dl>',
-    '    <div class="work-links">',
-    `      ${linksHtml}`,
-    '    </div>',
+    linksHtml ? `    <div class="work-links">
+      ${linksHtml}
+    </div>` : '',
     '    <section class="work-gallery">',
     '      <h2 class="section-heading">画面・作品</h2>',
     '      <div class="gallery-stack">',
@@ -635,7 +732,8 @@ function buildWorkHtml(site, work, allWorks, categorySlugMap) {
     '      <div class="work-contact-panel">',
     `        <p class="work-contact-lead">${esc(site.contactLead)}</p>`,
     '        <div class="work-contact-actions">',
-    `          <a class="btn btn-primary" href="${esc(site.contact.line.url)}" target="_blank" rel="noopener noreferrer">${esc(site.contact.line.label)}</a>`,
+    `          <a class="btn btn-line" href="${esc(site.contact.line.url)}" target="_blank" rel="noopener noreferrer">${esc(site.contact.line.label)}</a>`,
+    `          <a class="btn btn-secondary" href="${esc(site.contact.chatwork.url)}" target="_blank" rel="noopener noreferrer">${esc(site.contact.chatwork.label)}</a>`,
     `          ${renderMailSlot(site.contact.mail)}`,
     '        </div>',
     '      </div>',
@@ -725,8 +823,7 @@ function buildRobotsTxt(site) {
     'User-agent: *',
     'Allow: /',
     '',
-    `Sitemap: ${baseUrl}sitemap.xml`,
-    '',
+    ...(SEARCH_INDEX ? [`Sitemap: ${baseUrl}sitemap.xml`, ''] : []),
   ].join('\n');
 }
 
@@ -740,6 +837,9 @@ function writeText(absPath, content) {
   fs.writeFileSync(absPath, content, 'utf8');
 }
 
+let SEARCH_INDEX = true;
+let VIEW_LABEL = '';
+
 function main() {
   const site = JSON.parse(
     fs.readFileSync(path.join(DATA_DIR, 'site.json'), 'utf8')
@@ -748,6 +848,8 @@ function main() {
     fs.readFileSync(path.join(DATA_DIR, 'works.json'), 'utf8')
   );
 
+  VIEW_LABEL = worksData.viewLabel || '';
+  SEARCH_INDEX = site.searchIndex !== false;
   const categorySlugMap = new Map();
   for (const cat of worksData.categories) {
     categorySlugMap.set(cat.name, cat.slug);
@@ -781,11 +883,16 @@ function main() {
   }
 
   writeText(path.join(ROOT_DIR, '404.html'), build404Html(site));
-  writeText(path.join(ROOT_DIR, 'sitemap.xml'), buildSitemapXml(site, worksData));
+  const sitemapPath = path.join(ROOT_DIR, 'sitemap.xml');
+  if (SEARCH_INDEX) {
+    writeText(sitemapPath, buildSitemapXml(site, worksData));
+  } else if (fs.existsSync(sitemapPath)) {
+    fs.unlinkSync(sitemapPath);
+  }
   writeText(path.join(ROOT_DIR, 'robots.txt'), buildRobotsTxt(site));
 
   console.log(
-    `build complete: index.html, 404.html, sitemap.xml, robots.txt, and ${worksData.works.length} work pages`
+    `build complete: index.html, 404.html, ${SEARCH_INDEX ? 'sitemap.xml, ' : ''}robots.txt, and ${worksData.works.length} work pages${SEARCH_INDEX ? '' : ' (noindex: 検索に載せない)'}`
   );
 }
 
