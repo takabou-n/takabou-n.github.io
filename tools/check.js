@@ -403,6 +403,18 @@ function main() {
       }
     }
 
+    const iframeTags = content.match(/<iframe\b[^>]*>/gi) || [];
+    for (const tag of iframeTags) {
+      const src = getAttr(tag, 'src');
+      try {
+        if (!src || getHostname(src) !== 'www.youtube-nocookie.com' || !/^https:\/\/www\.youtube-nocookie\.com\/embed\/[A-Za-z0-9_-]+/.test(src)) {
+          check9Errors.push(`${rel}: 許可されていない <iframe> (${src})`);
+        }
+      } catch {
+        check9Errors.push(`${rel}: 不正な <iframe> URL (${src})`);
+      }
+    }
+
     const imgTags = content.match(/<img\b[^>]*>/gi) || [];
     for (const tag of imgTags) {
       const src = getAttr(tag, 'src');
@@ -451,7 +463,7 @@ function main() {
       }
     }
   }
-  record(9, '外部リソース読み込みが Google Fonts のみ', check9Errors);
+  record(9, '外部リソース読み込みが Google Fonts のみ（動画の埋め込みは YouTube nocookie だけ）', check9Errors);
 
   for (const line of results) {
     console.log(line);

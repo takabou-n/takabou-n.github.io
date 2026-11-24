@@ -710,7 +710,9 @@ function buildWorkHtml(site, work, allWorks, categorySlugMap) {
     `      <h1 class="work-title">${esc(work.title)}</h1>`,
     `      <span class="card-badge">${esc(work.category)}</span>`,
     '    </header>',
-    `    <div class="work-hero">${heroImg}</div>`,
+    work.youtube
+      ? `    <div class="work-hero work-video"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(work.youtube)}?rel=0" title="${esc(work.title)}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`
+      : `    <div class="work-hero">${heroImg}</div>`,
     '    <section class="work-description" aria-label="作品の説明">',
     `      ${descParagraphs}`,
     '    </section>',

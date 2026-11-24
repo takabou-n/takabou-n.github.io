@@ -10,6 +10,10 @@
       "slug": "web"
     },
     {
+      "name": "動画",
+      "slug": "video"
+    },
+    {
       "name": "自作ツール",
       "slug": "tool"
     },
@@ -31,6 +35,78 @@
     }
   ],
   "works": [
+    {
+      "id": "inuyama-cm",
+      "title": "国宝・犬山城 PR CM「姫に、逢いに来ませんか？」",
+      "category": "動画",
+      "media": "動画",
+      "caption": "国宝・犬山城／PR CM制作",
+      "card": "assets/works/inuyama-cm/card.jpg",
+      "cardAlt": "国宝・犬山城 PR CM のサムネイル。ライトアップした天守と「姫に、逢いにきませんか？」の文字",
+      "youtube": "Qol793JL1H0",
+      "description": [
+        "「なぜ犬山城は国宝になれたのか」を、城を守り継いだ成瀬家と「今も姫がいる」という物語で、60秒のPR CMにまとめました。",
+        "撮影した写真と許可をいただいた写真をもとにAIで映像を動かし、墨と和紙の差し込みカード、AIのナレーションとAIで作曲したBGMを合わせて編集しました。",
+        "仕上げに映像を1080pの高画質に整え、オンライン講座の卒業課題として発表します。"
+      ],
+      "role": [
+        "企画・構成",
+        "画像・動画生成",
+        "ナレーション・BGM",
+        "編集"
+      ],
+      "tools": [
+        "Claude（企画・台本）",
+        "Blender（天守の下絵）",
+        "Qwen-Image（画像）",
+        "MiniMax H3（動画生成）",
+        "Antigravity（差し込みカード）",
+        "Fish Audio（ナレーション）",
+        "ACE-Step（BGM）",
+        "Remotion（編集）",
+        "SeedVR2（高画質化）"
+      ],
+      "period": "2026年10月〜11月",
+      "note": "動画は YouTube の限定公開です。",
+      "links": [
+        {
+          "label": "YouTube で見る",
+          "url": "https://youtu.be/Qol793JL1H0"
+        }
+      ],
+      "gallery": [
+        {
+          "src": "assets/works/inuyama-cm/scene01.jpg",
+          "alt": "門が開いて、霧の朝の天守が見える場面",
+          "kind": "wide"
+        },
+        {
+          "src": "assets/works/inuyama-cm/scene02.jpg",
+          "alt": "墨と和紙の差し込みカード「国宝の天守 5」",
+          "kind": "wide"
+        },
+        {
+          "src": "assets/works/inuyama-cm/scene03.jpg",
+          "alt": "木曽川の霧の中に浮かぶ犬山城",
+          "kind": "wide"
+        },
+        {
+          "src": "assets/works/inuyama-cm/scene04.jpg",
+          "alt": "桜の季節の犬山城と城下町を空から見た場面",
+          "kind": "wide"
+        },
+        {
+          "src": "assets/works/inuyama-cm/scene05.jpg",
+          "alt": "蛍の光に包まれて、城が元の姿に戻る場面",
+          "kind": "wide"
+        },
+        {
+          "src": "assets/works/inuyama-cm/scene06.jpg",
+          "alt": "天守の廻縁から城下を眺める姫の後ろ姿",
+          "kind": "wide"
+        }
+      ]
+    },
     {
       "id": "school-lp",
       "title": "スクールの申込LP",
