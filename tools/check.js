@@ -202,6 +202,17 @@ function main() {
   }
   if (worksData && Array.isArray(worksData.works)) {
     const expectedSet = new Set(worksData.works.map((w) => `${w.id}.html`));
+    // 自己紹介ページ（site.json の profilePage）も works/ に置く
+    if (site && site.profilePage && site.profilePage.id) {
+      const pid = `${site.profilePage.id}.html`;
+      expectedSet.add(pid);
+      if (!fs.existsSync(path.join(worksOutDir, pid))) {
+        check3Errors.push(`works/${pid}（自己紹介ページ）が存在しません`);
+      }
+      if (!indexHtml.includes(`href="works/${pid}"`)) {
+        check3Errors.push(`index.html から works/${pid} へのリンクがありません`);
+      }
+    }
     const actualFiles = fs.existsSync(worksOutDir)
       ? fs.readdirSync(worksOutDir).filter((n) => n.endsWith('.html'))
       : [];

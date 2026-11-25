@@ -1477,3 +1477,46 @@ a {
   height: 100%;
   border: 0;
 }
+
+/* Self-introduction page: its own blue-green so it reads apart from the works */
+.page-profile {
+  --p-accent: #2E9C93;
+  --p-deep: #1D6B65;
+  --p-soft: #E6F5F3;
+  background: linear-gradient(160deg, #FFFFFF 0%, #F3FAF9 55%, #E9F5F3 100%);
+}
+
+.page-profile .work-title {
+  color: var(--p-deep);
+}
+
+.page-profile .breadcrumb a {
+  color: var(--p-deep);
+}
+
+.profile-page-lead {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.profile-slides {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 8px 0 48px;
+}
+
+.profile-slide {
+  margin: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(29, 107, 101, 0.14);
+  background-color: var(--p-soft);
+}
+
+.profile-slide-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

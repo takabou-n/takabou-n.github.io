@@ -1,11 +1,11 @@
 {
   "_note": "Claude が用意した中身。文言は一字も変えずに使う（Antigravity は編集しない）",
-  "siteTitle": "takabou/たかぼう｜AI活用支援・AI素材クリエイター",
-  "siteDescription": "AIの導入・活用のご相談から、画像・動画・音声・LPの素材づくりまで。愛知県在住、エンタメ業界で30年企画と映像演出に携わった、takabou/たかぼうの作品集です。",
+  "siteTitle": "takabou/たかぼう｜AI活用支援・AIクリエイター",
+  "siteDescription": "AIの導入・活用のご相談から、画像・動画・音声・LPの素材づくりまで。愛知県在住、パチンコメーカーで30年企画と映像演出に携わった、takabou/たかぼうの作品集です。",
   "siteUrl": "https://takabou-n.github.io/",
   "searchIndex": false,
   "name": "takabou/たかぼう",
-  "role": "AI活用支援・AI素材クリエイター",
+  "role": "AI活用支援・AIクリエイター",
   "region": "愛知県",
   "icon": "assets/img/icon.png",
   "iconAlt": "takabou/たかぼうの似顔絵イラスト",
@@ -47,7 +47,7 @@
       "id": "career",
       "heading": "経歴",
       "items": [
-        "1995年〜2025年：エンタメ業界の会社で、商品の企画開発と映像演出を担当",
+        "1995年〜2025年：パチンコメーカーで、台の企画開発と映像演出を担当",
         "2023年〜2025年：AI推進プロジェクトのリーダーとして、クリエイティブの仕事にAIを取り入れる役割を担当",
         "現在：AIの導入・活用支援と、AI素材づくりのお仕事をしています"
       ]
@@ -65,13 +65,49 @@
       "id": "tools",
       "heading": "使う道具",
       "items": [
-        {"label": "文章・設計", "lines": ["Claude、ChatGPT、Gemini"]},
-        {"label": "開発", "lines": ["Claude Code、Antigravity"]},
-        {"label": "画像", "lines": ["Stable Diffusion、Nano Banana Pro、Anima、", "Qwen-Image、FLUX.3"]},
-        {"label": "動画", "lines": ["Google Veo3、MiniMax H3、Wan2.2"]},
-        {"label": "音声", "lines": ["Fish Audio、Gemini TTS、Qwen-TTS、Irodori-TTS"]},
-        {"label": "音楽", "lines": ["Ace-Step1.5、Stable Audio"]},
-        {"label": "公開", "lines": ["GitHub Pages、Cloudflare、Vercel"]}
+        {
+          "label": "文章・設計",
+          "lines": [
+            "Claude、ChatGPT、Gemini"
+          ]
+        },
+        {
+          "label": "開発",
+          "lines": [
+            "Claude Code、Antigravity"
+          ]
+        },
+        {
+          "label": "画像",
+          "lines": [
+            "Stable Diffusion、Nano Banana Pro、Anima、",
+            "Qwen-Image、FLUX.3"
+          ]
+        },
+        {
+          "label": "動画",
+          "lines": [
+            "Google Veo3、MiniMax H3、Wan2.2"
+          ]
+        },
+        {
+          "label": "音声",
+          "lines": [
+            "Fish Audio、Gemini TTS、Qwen-TTS、Irodori-TTS"
+          ]
+        },
+        {
+          "label": "音楽",
+          "lines": [
+            "Ace-Step1.5、Stable Audio"
+          ]
+        },
+        {
+          "label": "公開",
+          "lines": [
+            "GitHub Pages、Cloudflare、Vercel"
+          ]
+        }
       ]
     },
     {
@@ -110,12 +146,12 @@
       "id": "profile",
       "title": "はじめまして、takabou/たかぼうです",
       "image": "assets/pinned/hello.jpg",
-      "alt": "自己紹介：はじめまして、takabou/たかぼうです。エンタメ業界で30年、企画と映像演出。できること：AI活用のご相談、公式LINEの構築、AI画像、AI動画、AI音声、LP・Webページ",
-      "href": "#about",
+      "alt": "自己紹介：はじめまして、takabou/たかぼうです。パチンコメーカーで30年、企画と映像演出。できること：AI活用のご相談、公式LINEの構築、AI画像、AI動画、AI音声、LP・Webページ",
+      "href": "works/profile.html",
       "media": "自己紹介",
       "caption": "【自己紹介】はこちらです",
       "genre": "プロフィール",
-      "view": "プロフィールを見る"
+      "view": "自己紹介を見る"
     }
   ],
   "skills": {
@@ -182,5 +218,37 @@
     "mailLabel": "メール",
     "ctaLead": "たかぼうへの問い合わせはこちらから",
     "ctaLabel": "問い合わせ"
+  },
+  "profilePage": {
+    "id": "profile",
+    "title": "自己紹介",
+    "heading": "takabou/たかぼうって、どんな人？",
+    "lead": "生まれた町のこと、会社員時代のこと、好きなこと、大切にしていること、これからの夢。6枚で、自分のことをお伝えします。",
+    "slides": [
+      {
+        "image": "assets/profile/01.jpg",
+        "alt": "自己紹介 1枚目：はじめまして、takabou/たかぼう です"
+      },
+      {
+        "image": "assets/profile/02.jpg",
+        "alt": "自己紹介 2枚目：大阪で生まれ育ち、 いまは犬山に 大阪市で生まれ、大阪の大学で電気工学を学びました いまは国宝・犬山城のある愛知県犬山市に住んでいます 薪ストーブのある家で、家族4人（妻と息子2人）で暮らしています"
+      },
+      {
+        "image": "assets/profile/03.jpg",
+        "alt": "自己紹介 3枚目：パチンコメーカーで30年、 台の企画と映像演出 機種責任者として担当した台で、いちばん売れたものは7万台（約150億円） いちばんうれしかったのは、自分が作った台を、たくさんの人が楽しそうに遊んでくれたこと 最後の3年間は、AI推進プロジェクトのリーダーとして、ものづくりにAIを取り入れる役割 55歳で早期退職し、AIを使って人を助ける仕事に就こうと決意"
+      },
+      {
+        "image": "assets/profile/04.jpg",
+        "alt": "自己紹介 4枚目：好きなこと・得意なこと 好きなこと サッカー観戦 ハワイに行くこと AIでツール開発 パソコンの自作 家族での旅行と食事 得意なこと パソコンの修理 薪作り ドライブ"
+      },
+      {
+        "image": "assets/profile/05.jpg",
+        "alt": "自己紹介 5枚目：大切にしていること 頼まれごとは、試されごと 頼まれるのは、期待してもらえているから。その期待を少しでも超える形で応える。 No Rain, No Rainbow 悪い事の後には、必ず良い事が来る。だから挫けない。 家族があっての人生 一人では誰も生きて行けない、家族で笑って暮らすことがいちばん。"
+      },
+      {
+        "image": "assets/profile/06.jpg",
+        "alt": "自己紹介 6枚目：将来の夢 AIを使って、身近な人の「困った」をなくす パソコン1つで、どこでも働けるようになる 2030年のサッカー・ワールドカップを、現地で観戦する 5年後に、豪華客船に乗って世界を旅する ハワイで生活する"
+      }
+    ]
   }
 }

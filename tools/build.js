@@ -757,6 +757,68 @@ function buildWorkHtml(site, work, allWorks, categorySlugMap) {
 }
 
 /**
+ * Build the self-introduction page (works/profile.html): slides stacked top to bottom.
+ * @param {object} site
+ * @returns {string}
+ */
+function buildProfileHtml(site) {
+  const pg = site.profilePage;
+  const relPrefix = '../';
+  const baseUrl = site.siteUrl.endsWith('/') ? site.siteUrl : `${site.siteUrl}/`;
+  const head = renderHead({
+    title: `${pg.title}｜${site.name}`,
+    description: pg.lead,
+    canonicalUrl: `${baseUrl}works/${pg.id}.html`,
+    ogImageUrl: baseUrl + pg.slides[0].image,
+    ogType: 'profile',
+    relPrefix,
+  });
+  const slides = pg.slides
+    .map((s, i) =>
+      `      <figure class="profile-slide">${renderImage(s.image, s.alt, relPrefix, { className: 'profile-slide-img', lazy: i > 0 })}</figure>`
+    )
+    .join('\n');
+  return [
+    '<!DOCTYPE html>',
+    '<html lang="ja">',
+    head,
+    '<body class="page-profile">',
+    renderHeader(site, relPrefix, '#contact'),
+    '<main class="site-main work-main">',
+    '  <div class="container">',
+    '    <nav class="breadcrumb" aria-label="パンくずリスト">',
+    `      <a href="../index.html">${esc(site.breadcrumbTop || 'トップページ')}</a>`,
+    '      <span class="breadcrumb-sep" aria-hidden="true">＞</span>',
+    `      <span aria-current="page">${esc(pg.title)}</span>`,
+    '    </nav>',
+    '    <header class="work-header profile-page-header">',
+    `      <h1 class="work-title">${esc(pg.heading)}</h1>`,
+    `      <p class="profile-page-lead">${esc(pg.lead)}</p>`,
+    '    </header>',
+    '    <div class="profile-slides">',
+    slides,
+    '    </div>',
+    '    <section class="work-contact" id="contact">',
+    '      <div class="work-contact-panel">',
+    `        <p class="work-contact-lead">${esc(site.contactLead)}</p>`,
+    '        <div class="work-contact-actions">',
+    `          <a class="btn btn-line" href="${esc(site.contact.line.url)}" target="_blank" rel="noopener noreferrer">${esc(site.contact.line.label)}</a>`,
+    `          <a class="btn btn-secondary" href="${esc(site.contact.chatwork.url)}" target="_blank" rel="noopener noreferrer">${esc(site.contact.chatwork.label)}</a>`,
+    `          ${renderMailSlot(site.contact.mail)}`,
+    '        </div>',
+    '      </div>',
+    '    </section>',
+    '  </div>',
+    '</main>',
+    renderFooter(site, { hasBottomBar: true }),
+    renderBottomBar(site),
+    '</body>',
+    '</html>',
+    '',
+  ].join('\n');
+}
+
+/**
  * Build 404.html.
  * @param {object} site
  * @returns {string}
@@ -884,6 +946,9 @@ function main() {
     );
   }
 
+  if (site.profilePage) {
+    writeText(path.join(WORKS_OUT_DIR, `${site.profilePage.id}.html`), buildProfileHtml(site));
+  }
   writeText(path.join(ROOT_DIR, '404.html'), build404Html(site));
   const sitemapPath = path.join(ROOT_DIR, 'sitemap.xml');
   if (SEARCH_INDEX) {
