@@ -47,3 +47,5 @@ npm run serve
 2. GitHub リポジトリの **Settings > Pages** を開きます。
 3. **Build and deployment** の Source で **Deploy from a branch** を選び、Branch を **`main`**、フォルダを **`/ (root)`** に設定して保存します。
 4. 公開後、`https://takabou-n.github.io/` で表示を確認します。
+
+- 2026-11-27：さわって動くLP（AI画像スクールのデモ）を追加。2つのLPは demo/ にコピーして置いている（demo/interactive-lp＝元 D:/Claude_Code/interactive-lp-v3、demo/school-lp＝元 イノベ大/AIコピー部【3期】/卒業課題/lp）。元を直したら demo/ に上書きコピーし、index.html の <meta name="robots" content="noindex, nofollow"> を入れ直す。
