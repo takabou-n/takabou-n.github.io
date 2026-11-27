@@ -2,10 +2,18 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT_DIR, 'data');
 const WORKS_OUT_DIR = path.join(ROOT_DIR, 'works');
+
+// Short content hash added to CSS/JS links (?v=...) so browsers fetch the new file after an update
+function assetVersion(rel) {
+  return crypto.createHash('md5').update(fs.readFileSync(path.join(ROOT_DIR, rel))).digest('hex').slice(0, 8);
+}
+const CSS_VER = assetVersion('assets/css/style.css');
+const JS_VER = assetVersion('assets/js/main.js');
 
 const NOSCRIPT_MAIL_TEXT =
   'メールアドレスを表示するには JavaScript を有効にしてください。公式LINEからもご相談いただけます。';
@@ -149,8 +157,8 @@ function renderHead({
     '  <link rel="preconnect" href="https://fonts.googleapis.com">',
     '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
     '  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">',
-    `  <link rel="stylesheet" href="${esc(relPrefix)}assets/css/style.css">`,
-    `  <script src="${esc(relPrefix)}assets/js/main.js" defer></script>`,
+    `  <link rel="stylesheet" href="${esc(relPrefix)}assets/css/style.css?v=${CSS_VER}">`,
+    `  <script src="${esc(relPrefix)}assets/js/main.js?v=${JS_VER}" defer></script>`,
     '</head>',
   ].join('\n');
 }
