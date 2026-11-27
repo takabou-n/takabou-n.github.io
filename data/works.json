@@ -160,6 +160,72 @@
       ]
     },
     {
+      "id": "interactive-lp",
+      "title": "さわって動くLP（AI画像スクールのデモ）",
+      "category": "Web・LP",
+      "media": "Webページ",
+      "caption": "AI画像スクール／インタラクティブLP",
+      "card": "assets/works/interactive-lp/card.jpg",
+      "cardAlt": "さわって動くLPの紹介画像。スマホで表示した3つの画面",
+      "description": [
+        "読むだけでなく「さわって楽しめる」LPを目指した、架空のAI画像スクールのデモページです。キャラクターを指で回す、言葉カードで絵を変える、猫をなでるなど、場所ごとに違う体験を入れました。",
+        "案内役は、LINEスタンプの西宮ちゃことちゃこ猫です。8方向の絵をそろえて指で回せるようにし、声と効果音で、さわるたびに反応が返ってきます。",
+        "スマホで実際に触って確かめながら、動きのなめらかさや操作のしやすさを直して仕上げました。"
+      ],
+      "role": [
+        "企画・設計",
+        "画像",
+        "コーディング",
+        "声・効果音"
+      ],
+      "tools": [
+        "Claude（設計・文章・修正）",
+        "Antigravity（開発・回転の絵）",
+        "Fish Audio（ちゃこの声）",
+        "Python（効果音の合成）"
+      ],
+      "period": "2026年11月",
+      "note": "架空のスクールのデモです。効果音の一部に、小森平さん・効果音ラボの素材を使っています。",
+      "links": [
+        {
+          "label": "実際にさわってみる",
+          "url": "../demo/interactive-lp/index.html"
+        }
+      ],
+      "gallery": [
+        {
+          "src": "assets/works/interactive-lp/sp_00.jpg",
+          "alt": "スマホで表示した最初の画面。案内役の西宮ちゃこ",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/interactive-lp/sp_01.jpg",
+          "alt": "言葉カードを選ぶと絵が変わる「言葉を選ぶだけで、絵が変わる。」",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/interactive-lp/sp_05.jpg",
+          "alt": "指でキャラクターを回せるキャラクターシート",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/interactive-lp/sp_08.jpg",
+          "alt": "1枚の絵を、言葉ごとに分けて見せる場面",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/interactive-lp/sp_04.jpg",
+          "alt": "スクロールで進む30日のロードマップ",
+          "kind": "sp"
+        },
+        {
+          "src": "assets/works/interactive-lp/sp_09.jpg",
+          "alt": "なでると指についてくる、ちゃこ猫",
+          "kind": "sp"
+        }
+      ]
+    },
+    {
       "id": "school-lp",
       "title": "スクールの申込LP",
       "category": "Web・LP",
@@ -188,7 +254,7 @@
       "links": [
         {
           "label": "実際のページを見る",
-          "url": "https://ai-gazo-school-lp.pages.dev/"
+          "url": "../demo/school-lp/index.html"
         }
       ],
       "gallery": [

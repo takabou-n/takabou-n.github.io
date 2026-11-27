@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オンラインAI画像スクール｜1日30分から始めるAI画像副業</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/chako/idle.webp">
+<link rel="preload" as="image" href="assets/chako/cheer.webp">
+<link rel="preload" as="image" href="assets/chako/point.webp">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 最上部の読書バー -->
+<div class="bar" aria-hidden="true"><i id="bar"></i></div>
+
+<!-- 固定ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo" id="header-logo">
+      オンラインAI画像スクール
+      <small id="header-logo-sub">ONLINE AI IMAGE SCHOOL</small>
+    </div>
+    <button type="button" id="sound-toggle" class="sound-btn" aria-pressed="true">音：ON</button>
+  </div>
+</header>
+
+<main>
+  <!-- #1 ヒーロー + #1b リード文＆案内カード2枚 -->
+  <section class="hero" id="sec-1" data-watch>
+    <p class="eyebrow anim" id="hero-sub">絵が描けない会社員のための</p>
+    <h1 id="hero-title">1日30分から始める<br><span class="mk">AI画像副業</span></h1>
+
+    <div class="stage anim">
+      <div class="disc"></div>
+      <svg class="ring" viewBox="0 0 288 288" fill="none" aria-hidden="true">
+        <circle cx="144" cy="144" r="138" stroke="#1A1948" stroke-opacity=".22" stroke-width="1.5" stroke-dasharray="6 8"/>
+      </svg>
+
+      <span class="word w1" id="hero-w1">猫耳の女の子</span>
+      <span class="word w2" id="hero-w2">雨の夕暮れ</span>
+      <span class="word w3" id="hero-w3">黄色いレインコート</span>
+      <span class="word w4" id="hero-w4">太い線のアニメ風</span>
+
+      <div class="bubble" id="bubble">たたいてみて</div>
+      <button class="chako" id="chako" type="button" aria-label="ちゃこをタップ">
+        <img id="chakoImg" src="assets/chako/idle.webp" alt="ちゃこ" width="246" height="286">
+      </button>
+    </div>
+
+    <div class="hero-intro" id="sec-1b">
+      <p class="hero-body" id="hero-body"></p>
+      <div class="guide-cards" id="hero-cards"></div>
+    </div>
+  </section>
+
+  <!-- オレンジの帯 -->
+  <div class="band" data-watch aria-hidden="true">
+    <div class="band-track anim" id="band-track">
+      <span>MAKE WHAT YOU IMAGINE ＋</span>
+      <span>MAKE WHAT YOU IMAGINE ＋</span>
+      <span>MAKE WHAT YOU IMAGINE ＋</span>
+      <span>MAKE WHAT YOU IMAGINE ＋</span>
+    </div>
+  </div>
+
+  <!-- #2 ことばカード（選ぶ＋シャッター） -->
+  <section class="sec sec--tint" id="sec-2" data-watch>
+    <div class="wrap">
+      <div class="ghost" aria-hidden="true">01</div>
+      <p class="label">WORD CARDS</p>
+      <h2 class="sec-title" id="sec2-title"></h2>
+      <p class="sec-lead" id="sec2-body"></p>
+
+      <!-- 上に出来上がり画像 -->
+      <div class="photo-frame" id="photo-frame">
+        <img src="assets/works/chako_cafe.webp" alt="ちゃこ×カフェ" class="work-img is-active" data-combo="chako_cafe">
+        <img src="assets/works/chako_stars.webp" alt="ちゃこ×星空" class="work-img" data-combo="chako_stars">
+        <img src="assets/works/cat_cafe.webp" alt="ちゃこ猫×カフェ" class="work-img" data-combo="cat_cafe">
+        <img src="assets/works/cat_stars.webp" alt="ちゃこ猫×星空" class="work-img" data-combo="cat_stars">
+        <div class="flash-overlay" id="flash-overlay"></div>
+      </div>
+
+      <!-- 主役カード・場所カード -->
+      <div class="word-picker">
+        <div class="picker-row" id="subject-cards-row">
+          <span class="picker-label">主役</span>
+        </div>
+        <div class="picker-row" id="place-cards-row">
+          <span class="picker-label">場所</span>
+        </div>
+      </div>
+
+      <!-- シャッターボタン -->
+      <div class="shutter-area">
+        <button type="button" id="shutter-btn" class="shutter-btn" aria-label="シャッターを押す">
+          <span class="shutter-ring">シャッター</span>
+        </button>
+      </div>
+
+      <p class="sec2-caption" id="sec2-caption"></p>
+    </div>
+  </section>
+
+  <!-- #3 数字で見るスクール -->
+  <section class="sec sec--paper" id="sec-3" data-watch>
+    <div class="wrap">
+      <p class="label">BY THE NUMBERS</p>
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+  </section>
+
+  <!-- #4 3つの変化 -->
+  <section class="sec sec--tint" id="sec-4" data-watch>
+    <div class="wrap">
+      <p class="label">THREE CHANGES</p>
+      <div class="changes-stack" id="changes-stack"></div>
+    </div>
+  </section>
+
+  <!-- #5 30日ロードマップ -->
+  <section class="sec sec--paper" id="sec-5" data-watch>
+    <div class="wrap">
+      <p class="label">30-DAY ROADMAP</p>
+      <h2 class="sec-title" id="sec5-title"></h2>
+      <p class="roadmap-accent" id="sec5-accent"></p>
+
+      <div class="roadmap-surface">
+        <div class="roadmap-top">
+          <div class="day-dial" aria-live="polite">
+            <span class="day-dial-prefix" id="roadmap-dial-prefix">DAY</span>
+            <span class="day-dial-num" id="roadmap-day-num">1</span>
+          </div>
+        </div>
+
+        <div class="timeline-rail" id="timeline-rail">
+          <div class="timeline-line-bg"></div>
+          <div class="timeline-line-fill" id="timeline-line-fill"></div>
+          <div id="roadmap-steps"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- #6 キャラクター設計シート（指でくるっと回す） -->
+  <section class="sec sec--tint" id="sec-6" data-watch>
+    <div class="wrap">
+      <div class="ghost" aria-hidden="true">02</div>
+      <p class="label">CHARACTER SHEET</p>
+      <h2 class="sec-title" id="sec6-title"></h2>
+      <p class="sec-lead" id="sec6-body"></p>
+
+      <div class="turn-card">
+        <div class="turn-hint-bar">
+          <span class="turn-hint-pill" id="sec6-hint">↔ 指で回してみて</span>
+          <span class="turn-angle-label" id="turn-angle-label">0°</span>
+        </div>
+
+        <div class="turn-stage" id="turn-stage" aria-label="ちゃこを左右になぞって回転">
+          <div class="turn-disc"></div>
+          <svg class="turn-ring" viewBox="0 0 244 62" fill="none" aria-hidden="true">
+            <ellipse cx="122" cy="31" rx="116" ry="25" stroke="#1A1948" stroke-opacity=".26" stroke-width="1.5" stroke-dasharray="6 7"/>
+          </svg>
+          <div class="turn-stack" id="turn-stack">
+            <img src="assets/turn/turn_000.webp" alt="ちゃこ 0度" class="turn-img is-active" data-turn-idx="0">
+            <img src="assets/turn/turn_045.webp" alt="ちゃこ 45度" class="turn-img" data-turn-idx="1">
+            <img src="assets/turn/turn_090.webp" alt="ちゃこ 90度" class="turn-img" data-turn-idx="2">
+            <img src="assets/turn/turn_135.webp" alt="ちゃこ 135度" class="turn-img" data-turn-idx="3">
+            <img src="assets/turn/turn_180.webp" alt="ちゃこ 180度" class="turn-img" data-turn-idx="4">
+            <img src="assets/turn/turn_225.webp" alt="ちゃこ 225度" class="turn-img" data-turn-idx="5">
+            <img src="assets/turn/turn_270.webp" alt="ちゃこ 270度" class="turn-img" data-turn-idx="6">
+            <img src="assets/turn/turn_315.webp" alt="ちゃこ 315度" class="turn-img" data-turn-idx="7">
+          </div>
+        </div>
+
+        <div class="turn-dots" id="turn-dots" aria-hidden="true"></div>
+      </div>
+
+      <div class="sheet-showcase">
+        <img src="assets/page/character_sheet.webp" alt="キャラクター設計シート" class="sheet-img">
+        <div class="sheet-notes" id="sec6-notes"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- #7 制作の流れ（横になぞって完成させる） -->
+  <section class="make" id="sec-7" data-watch>
+    <div class="wrap">
+      <div class="ghost" aria-hidden="true">03</div>
+      <p class="label" id="sec7-label">FROM WORDS TO PICTURE</p>
+      <h2 class="sec-title" id="sec7-title">白い紙が、<br>自分の絵になる。</h2>
+
+      <div class="canvas" id="canvas">
+        <div class="blank" id="blank"><span id="sec7-hint">横になぞってみて</span> <b>→</b></div>
+        <img id="rough" src="assets/works/rough.webp" alt="ラフ画" style="clip-path:inset(0 100% 0 0)">
+        <img id="final" src="assets/works/final.webp" alt="完成画" style="clip-path:inset(0 100% 0 0)">
+        <div class="scan" id="scan"></div>
+
+        <i class="spark" style="--bx:-120px;--by:-90px"></i>
+        <i class="spark" style="--bx:115px;--by:-80px"></i>
+        <i class="spark" style="--bx:-130px;--by:30px"></i>
+        <i class="spark" style="--bx:130px;--by:40px"></i>
+        <i class="spark" style="--bx:-70px;--by:115px"></i>
+        <i class="spark" style="--bx:80px;--by:110px"></i>
+        <i class="spark" style="--bx:0px;--by:-130px"></i>
+      </div>
+
+      <div class="panel">
+        <div class="track" id="track" role="slider" tabindex="0" aria-label="制作の進み具合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="rail"><div class="fill" id="fill"></div></div>
+          <div class="thumb" id="thumb">↔</div>
+        </div>
+        <div class="steps" id="sec7-steps">
+          <span class="on"><b>01</b>描きたい</span>
+          <span><b>02</b>試す</span>
+          <span><b>03</b>形になる</span>
+        </div>
+        <div class="cap">
+          <b id="cnum">01/03</b>
+          <span id="ctext">頭の中には、もう絵がある。</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- #8 作品解剖 -->
+  <section class="sec sec--tint" id="sec-8" data-watch>
+    <div class="wrap">
+      <div class="ghost" aria-hidden="true">04</div>
+      <p class="label">WORK DECODING</p>
+      <h2 class="sec-title" id="sec8-title"></h2>
+
+      <div class="decode-frame" id="decode-frame">
+        <div class="decode-zoom" id="decode-zoom">
+          <img src="assets/works/final.webp" alt="完成作品" class="decode-img">
+          <div class="decode-spotlight" id="decode-spotlight"></div>
+        </div>
+        <div class="decode-pins" id="decode-pins"></div>
+      </div>
+
+      <div class="decode-nav" id="decode-nav"></div>
+      <div class="decode-words" id="decode-words"></div>
+    </div>
+  </section>
+
+  <!-- #9 ひと息（ちゃこ猫） -->
+  <section class="rest" id="sec-9" data-watch>
+    <div class="wrap">
+      <p class="label" id="sec9-label">TAKE A BREAK</p>
+      <h2 class="sec-title" id="sec9-title"></h2>
+      <p class="lead" id="sec9-lead">なでると、指についてくるよ。</p>
+
+      <div class="field" id="field">
+        <div class="floor"></div>
+        <div class="cat" id="cat">
+          <img class="sit" src="assets/cat/sit.webp" alt="ちゃこ猫">
+          <img class="purr" src="assets/cat/purr.webp" alt="喜ぶちゃこ猫">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- #10 講師紹介＋受講生の声 -->
+  <section class="sec sec--tint" id="sec-10" data-watch>
+    <div class="wrap">
+      <p class="label">INSTRUCTOR &amp; VOICE</p>
+      <h2 class="sec-title" id="sec10-title"></h2>
+
+      <div class="profile-stack">
+        <div class="profile-surface">
+          <div class="profile-top">
+            <img src="assets/page/profile.webp" alt="講師アイコン" class="profile-avatar">
+            <p class="profile-role" id="sec10-role"></p>
+          </div>
+          <p class="profile-body" id="sec10-body"></p>
+        </div>
+
+        <div class="profile-surface">
+          <div class="profile-top">
+            <img src="assets/page/voice.webp" alt="受講生のアイコン" class="profile-avatar">
+            <p class="profile-role">受講生の声</p>
+          </div>
+          <p class="profile-body" id="sec10-voice-text"></p>
+        </div>
+
+        <div class="profile-surface">
+          <div class="profile-top">
+            <img src="assets/page/voice2.webp" alt="受講生のアイコン（2人目）" class="profile-avatar">
+            <p class="profile-role">受講生の声</p>
+          </div>
+          <p class="profile-body" id="sec10-voice-text2"></p>
+        </div>
+      </div>
+      <p class="voice-note" id="sec10-voice-note"></p>
+    </div>
+  </section>
+
+  <!-- #11 最終CTA -->
+  <section class="sec sec--paper" id="sec-11" data-watch>
+    <div class="wrap">
+      <div class="end" id="cta-surface">
+        <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+        <p class="label" style="color: var(--deep);">START YOUR 30 DAYS</p>
+        <h2 class="sec-title" id="sec11-title"></h2>
+        <p class="end-body" id="sec11-body"></p>
+
+        <p class="end-above" id="sec11-above"></p>
+
+        <div class="end-stage">
+          <img src="assets/chako/idle.webp" alt="ちゃこ" id="cta-chako" class="cta-chako">
+          <button type="button" id="cta-push-btn" class="cta-push-btn" aria-label="押してみてください">
+            <span>PUSH</span>
+            押す！
+          </button>
+        </div>
+
+        <div class="cta-after is-hidden" id="cta-after">
+          <a href="#sec-11" id="cta-entry-btn" class="cta-entry-btn"></a>
+          <p class="cta-empty-msg is-hidden" id="cta-empty-msg"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- #12 Q&A -->
+  <section class="sec sec--paper" id="sec-12" data-watch>
+    <div class="wrap">
+      <p class="label">QUESTIONS</p>
+      <h2 class="sec-title" id="sec12-title"></h2>
+      <div class="qa-list" id="qa-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="note">
+  <p id="footer-text">このページは架空のスクールのデモです。画像はAIで生成したイメージです。</p>
+  <p class="credit">ちゃこの声：<a href="https://fish.audio/" target="_blank" rel="noopener noreferrer">Fish Audio</a>（音声合成）</p>
+  <p class="credit" id="credit">効果音：<a href="https://taira-komori.net/" target="_blank" rel="noopener noreferrer">無料効果音で遊ぼう！</a>（小森平）・<a href="https://soundeffect-lab.info/" target="_blank" rel="noopener noreferrer">効果音ラボ</a></p>
+</footer>
+
+<!-- 下部の浮遊バー -->
+<nav class="dock" aria-label="ページ内移動">
+  <a href="#sec-2" id="dock-left">体験する</a>
+  <a href="#sec-11" class="main" id="dock-right">無料で受け取る</a>
+</nav>
+
+<script src="brand.js"></script>
+<script src="js/sfx-data.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/sections.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
