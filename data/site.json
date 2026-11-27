@@ -79,8 +79,8 @@
         {
           "label": "画像",
           "lines": [
-            "Stable Diffusion、Nano Banana Pro、Anima、",
-            "Qwen-Image、FLUX.3"
+            "Nano Banana Pro、GPT-Image、Stable Diffusion、",
+            "Anima、Z-image、Qwen-Image、H3-Image、FLUX.3"
           ]
         },
         {
@@ -98,7 +98,7 @@
         {
           "label": "音楽",
           "lines": [
-            "Ace-Step1.5、Stable Audio"
+            "Ace-Step1.5、Stable Audio、YuE2"
           ]
         },
         {
