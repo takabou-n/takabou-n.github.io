@@ -164,6 +164,13 @@ function main() {
           if (g.src) referencedImages.push([`${w.id}.gallery[${idx}].src`, g.src]);
         });
       }
+      if (Array.isArray(w.extra)) {
+        w.extra.forEach((ex, ei) => {
+          (ex.gallery || []).forEach((g, idx) => {
+            if (g.src) referencedImages.push([`${w.id}.extra[${ei}].gallery[${idx}].src`, g.src]);
+          });
+        });
+      }
     }
   }
   for (const [label, relPath] of referencedImages) {

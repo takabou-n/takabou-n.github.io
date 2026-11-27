@@ -105,6 +105,58 @@
           "alt": "天守の廻縁から城下を眺める姫の後ろ姿",
           "kind": "wide"
         }
+      ],
+      "extra": [
+        {
+          "heading": "30秒版「光の城」",
+          "youtube": "",
+          "description": [
+            "同じ犬山城を題材に、見せ方を大きく変えた30秒版です。墨の線で描いた城が組み上がり、夜の天守の白い壁に春・夏・秋・冬の映像を映す、プロジェクションマッピング風の演出にしました。",
+            "映像が白い漆喰の部分だけに重なるよう、1コマずつ壁の形を切り抜いて合成しています。瓦や石垣はそのままで、城が回るあいだも直前の季節が映り続けます。",
+            "AIで作った姫の歌と和風のBGMを合わせ、歌の区切りで季節が切り替わるように編集しました。"
+          ],
+          "tools": [
+            "Claude（構成・合成の仕組み）",
+            "Antigravity（墨の城）",
+            "Google Flow（夜の城・映す絵）",
+            "MiniMax H3（城の回転）",
+            "SeedVR2（高画質化）",
+            "ACE-Step（姫の歌・BGM）",
+            "Fish Audio（ナレーション）"
+          ],
+          "gallery": [
+            {
+              "src": "assets/works/inuyama-cm/s30_01.jpg",
+              "alt": "墨の線で描かれた犬山城の天守",
+              "kind": "wide"
+            },
+            {
+              "src": "assets/works/inuyama-cm/s30_02.jpg",
+              "alt": "夜の天守の白い壁に、春の桜を映した場面",
+              "kind": "wide"
+            },
+            {
+              "src": "assets/works/inuyama-cm/s30_03.jpg",
+              "alt": "城が回り、白い壁に夏のひまわりを映した場面",
+              "kind": "wide"
+            },
+            {
+              "src": "assets/works/inuyama-cm/s30_04.jpg",
+              "alt": "白い壁に秋の紅葉を映した場面",
+              "kind": "wide"
+            },
+            {
+              "src": "assets/works/inuyama-cm/s30_05.jpg",
+              "alt": "白い壁に冬の雪を映した場面",
+              "kind": "wide"
+            },
+            {
+              "src": "assets/works/inuyama-cm/s30_06.jpg",
+              "alt": "白く照らされた天守と「国宝　犬山城」の文字",
+              "kind": "wide"
+            }
+          ]
+        }
       ]
     },
     {

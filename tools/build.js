@@ -349,7 +349,7 @@ function renderAboutSection(aboutList) {
     '<section class="about-section">',
     '  <div class="container">',
     '    <details id="about" class="about-details">',
-    '      <summary class="about-summary"><span class="about-summary-text">プロフィールをくわしく見る</span></summary>',
+    '      <summary class="about-summary"><span class="about-summary-text when-closed">プロフィールをくわしく見る</span><span class="about-summary-text when-open">プロフィール詳細を閉じる</span></summary>',
     '      <div class="about-body">',
     groups,
     '      </div>',
@@ -546,6 +546,42 @@ function buildIndexHtml(site, worksData, categorySlugMap) {
 }
 
 /**
+ * Render additional versions of a work (e.g. a 30-second cut) below the gallery.
+ * Each entry: { heading, youtube?, description[], tools?[], gallery?[] }
+ * @param {object} work
+ * @param {string} relPrefix
+ * @returns {string}
+ */
+function renderExtraSections(work, relPrefix) {
+  if (!Array.isArray(work.extra) || work.extra.length === 0) return '';
+  return work.extra
+    .map((ex) => {
+      const parts = ['    <section class="work-extra">', `      <h2 class="section-heading">${esc(ex.heading)}</h2>`];
+      if (ex.youtube) {
+        parts.push(
+          `      <div class="work-video"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(ex.youtube)}?rel=0" title="${esc(work.title)}（${esc(ex.heading)}）" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`
+        );
+      }
+      if (Array.isArray(ex.description) && ex.description.length) {
+        parts.push('      <div class="work-description">', ...ex.description.map((line) => `        <p>${esc(line)}</p>`), '      </div>');
+      }
+      if (Array.isArray(ex.tools) && ex.tools.length) {
+        parts.push(
+          '      <dl class="work-meta">',
+          `        <div class="meta-row"><dt>使った道具</dt><dd>${esc(ex.tools.join('・'))}</dd></div>`,
+          '      </dl>'
+        );
+      }
+      if (Array.isArray(ex.gallery) && ex.gallery.length) {
+        parts.push('      <div class="gallery-stack">', renderGalleryGroups(ex.gallery, relPrefix), '      </div>');
+      }
+      parts.push('    </section>');
+      return parts.join('\n');
+    })
+    .join('\n');
+}
+
+/**
  * Render grouped gallery items by kind.
  * @param {Array<object>} gallery
  * @param {string} relPrefix
@@ -730,6 +766,7 @@ function buildWorkHtml(site, work, allWorks, categorySlugMap) {
     renderGalleryGroups(work.gallery, relPrefix),
     '      </div>',
     '    </section>',
+    ...[renderExtraSections(work, relPrefix)].filter(Boolean),
     '    <section class="work-contact" id="contact">',
     '      <div class="work-contact-panel">',
     `        <p class="work-contact-lead">${esc(site.contactLead)}</p>`,

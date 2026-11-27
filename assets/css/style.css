@@ -361,6 +361,15 @@ a {
   transition: transform 0.2s ease;
 }
 
+.about-summary .when-open,
+.about-details[open] .about-summary .when-closed {
+  display: none;
+}
+
+.about-details[open] .about-summary .when-open {
+  display: inline;
+}
+
 .about-details[open] .about-summary::after {
   transform: rotate(-135deg);
   margin-top: 4px;
@@ -899,6 +908,19 @@ a {
 /* Gallery */
 .work-gallery {
   margin-bottom: 48px;
+}
+
+/* Another version of the same work (e.g. a 30-second cut) */
+.work-extra {
+  margin-bottom: 48px;
+}
+
+.work-extra .work-video {
+  margin-bottom: 28px;
+}
+
+.work-extra .work-meta {
+  margin-bottom: 28px;
 }
 
 .gallery-stack {
